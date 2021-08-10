@@ -1,0 +1,6 @@
+# VS Code
+/*.code-workspace
+
+# Ignore dirs starting with . or __
+.*/
+__*/
