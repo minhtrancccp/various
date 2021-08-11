@@ -40,9 +40,8 @@ def _factory(magnitude: int) -> tuple[int, int, float, float]:
     return magnitude, number_of_points, result, abs(result / pi - 1) * 100
 
 
-if __name__ == "__main__":
+def main():
     print(f"{pi = }")
-
     new_table: PrettyTable = PrettyTable(
         [
             "Order of magnitude (10^)",
@@ -51,8 +50,10 @@ if __name__ == "__main__":
             "Relative difference (in %)",
         ]
     )
-
     with Timer(text="Tabulation time: {:0.4f} seconds"):
         new_table.add_rows(Pool().map(_factory, range(1, 9)))
-
     print(new_table)
+
+
+if __name__ == "__main__":
+    main()

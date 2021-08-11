@@ -6,9 +6,8 @@ from collections.abc import Callable
 from itertools import compress
 from typing import Union
 
-from fibonacci_sequence_related import length_generator, max_generator
+from various.root.fibonacci_sequence_related import length_generator, max_generator
 
-_allowed_chars: str = "01"
 _replace_args: tuple[str, str, int] = ("011", "100", 1)
 
 
@@ -16,7 +15,7 @@ def _wrapper(
     func: Callable[[str], Union[int, str]]
 ) -> Callable[[str], Union[int, str]]:
     def _valid_sequence(sequence: str) -> Union[int, str]:
-        if all(map(_allowed_chars.__contains__, sequence)):
+        if all(map("01".__contains__, sequence)):
             return func(sequence)
 
         raise ValueError(f"{sequence=} has digits different than 0 or 1")
@@ -60,9 +59,3 @@ def fibonacci_to_decimal(fibonacci_sequence: str) -> int:
             map(int, reversed(fibonacci_sequence)),
         )
     )
-
-
-def test_():
-    assert decimal_to_zeckendorf(0) == "0"
-    assert fibonacci_to_decimal("1001") == 6
-    assert fibonacci_to_decimal("0") == 0

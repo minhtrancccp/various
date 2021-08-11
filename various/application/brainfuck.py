@@ -1,11 +1,14 @@
 from typing import Literal
 
+from beartype import beartype
+
 
 def _increment_decrement(sign: Literal["+", "-", ">", "<"]) -> int:
     return -1 if sign in ["-", "<"] else 1
 
 
 class Computer:
+    @beartype
     def __init__(self, memory_size: int) -> None:
         self.pointer: int = 0
 
@@ -14,8 +17,9 @@ class Computer:
 
         self.memory: list = [0] * memory_size
 
+    @beartype
     def action_choosing(
-        self, input_sign: Literal["+", "-", ">", "<", "[", "]", ",", "."]
+        self, input_sign: Literal["+", "-", ">", "<", "[", "]", ".", ","]
     ) -> None:
         if input_sign in ["+", "-"]:
             return self.delta_memory(input_sign)
@@ -23,16 +27,11 @@ class Computer:
         elif input_sign in [">", "<"]:
             return self.delta_pointer(input_sign)
 
-        elif input_sign == ",":
+        elif input_sign == ".":
             return self.get_char()
 
-        elif input_sign == ".":
+        elif input_sign == ",":
             return self.put_char()
-
-        else:
-            raise ValueError(
-                f"{input_sign} is not one of the accepted operators"
-            )
 
     def delta_memory(self, memory_sign: Literal["+", "-"]) -> None:
         self.memory[self.pointer] += _increment_decrement(memory_sign)
@@ -40,8 +39,8 @@ class Computer:
     def delta_pointer(self, pointer_sign: Literal[">", "<"]) -> None:
         self.pointer += _increment_decrement(pointer_sign)
 
-    def put_char(self) -> None:
+    def get_char(self) -> None:
         print(chr(self.memory[self.pointer]), end="")
 
-    def get_char(self) -> None:
+    def put_char(self) -> None:
         ...

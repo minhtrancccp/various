@@ -2,11 +2,19 @@
 name = "various"
 version = "0.1.0"
 description = ""
+license = "GPL-3.0-or-later"
 authors = ["minhcccp <33189614+minhcccp@users.noreply.github.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.9"
+
+beartype = {version = "^0.7.1", allow-prereleases = true}
+codetiming = {version = "^1.3.0", allow-prereleases = true}
+more-itertools = {version = "^8.8.0", allow-prereleases = true}
+prettytable = {version = "^2.1.0", allow-prereleases = true}
+sympy = {version = "^1.8", allow-prereleases = true}
+humanfriendly = {version = "^9.2", allow-prereleases = true}
 
 [tool.poetry.dev-dependencies]
 black = { version = "^21.6b0", allow-prereleases = true }

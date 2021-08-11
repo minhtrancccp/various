@@ -1,10 +1,10 @@
 """
-A script containing useful constants and functions to be used for scripts with user inputs
+A script containing constants and functions handling with user inputs
 """
 
 from time import sleep
 
-QUIT_REMINDER: str = "Type 'quit' at any time to stop the program\n"
+QUIT_REMINDER: str = "Please type 'quit' at any time to stop the program"
 
 
 def quit_confirmation(question: str) -> str:
@@ -30,11 +30,15 @@ def stop_with_goodbye() -> None:
     print("Thanks for using the program, see ya! From MinhCCCP")
     sleep(3)
 
-    return None
+    raise SystemExit()
 
 
-if __name__ == "__main__":
+def main():
     while True:
         quit_confirmation(
             "This is a trial, type anything, the program will stop if you type 'quit': "
         )
+
+
+if __name__ == "__main__":
+    main()

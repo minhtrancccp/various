@@ -10,8 +10,6 @@ from codetiming import Timer
 from more_itertools import all_equal
 from sympy import prime
 
-_index: int
-_char: str
 _char_prime_dict: dict[str, int] = {
     _char: prime(_index) for _index, _char in enumerate(ascii_lowercase, start=1)
 }

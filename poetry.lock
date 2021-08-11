@@ -70,6 +70,20 @@ optional = false
 python-versions = "*"
 
 [[package]]
+name = "beartype"
+version = "0.7.1"
+description = "Unbearably fast runtime type checking in pure Python."
+category = "main"
+optional = false
+python-versions = ">=3.6.0"
+
+[package.extras]
+dev = ["coverage (>=5.5)", "mypy (>=0.800)", "pytest (>=4.0.0)", "tox (>=3.20.1)", "sphinx (>=3.4.3)"]
+doc-rtd = ["sphinx (==3.4.3)", "sphinx-rtd-theme (==0.5.1)"]
+test-tox = ["mypy (>=0.800)", "pytest (>=4.0.0)"]
+test-tox-coverage = ["coverage (>=5.5)"]
+
+[[package]]
 name = "black"
 version = "21.7b0"
 description = "The uncompromising code formatter."
@@ -122,6 +136,18 @@ description = "Composable command line interface toolkit"
 category = "dev"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
+
+[[package]]
+name = "codetiming"
+version = "1.3.0"
+description = "A flexible, customizable timer for your Python code"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.extras]
+dev = ["black", "bump2version", "flake8", "flit", "interrogate", "isort", "mypy"]
+test = ["black", "interrogate", "pytest", "pytest-cov", "tox"]
 
 [[package]]
 name = "colorama"
@@ -228,6 +254,17 @@ python-versions = ">=3.6"
 [package.dependencies]
 gitdb = ">=4.0.1,<5"
 typing-extensions = {version = ">=3.7.4.3", markers = "python_version < \"3.10\""}
+
+[[package]]
+name = "humanfriendly"
+version = "9.2"
+description = "Human friendly output for text interfaces using Python"
+category = "main"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
+
+[package.dependencies]
+pyreadline = {version = "*", markers = "sys_platform == \"win32\""}
 
 [[package]]
 name = "iniconfig"
@@ -499,6 +536,26 @@ optional = false
 python-versions = "*"
 
 [[package]]
+name = "more-itertools"
+version = "8.8.0"
+description = "More routines for operating on iterables, beyond itertools"
+category = "main"
+optional = false
+python-versions = ">=3.5"
+
+[[package]]
+name = "mpmath"
+version = "1.2.1"
+description = "Python library for arbitrary-precision floating-point arithmetic"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.extras]
+develop = ["pytest (>=4.6)", "pycodestyle", "pytest-cov", "codecov", "wheel"]
+tests = ["pytest (>=4.6)"]
+
+[[package]]
 name = "mypy-extensions"
 version = "0.4.3"
 description = "Experimental type system extensions for programs checked with the mypy typechecker."
@@ -693,6 +750,20 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 dev = ["pre-commit", "tox"]
 
 [[package]]
+name = "prettytable"
+version = "2.1.0"
+description = "A simple Python library for easily displaying tabular data in a visually appealing ASCII table format"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+wcwidth = "*"
+
+[package.extras]
+tests = ["pytest", "pytest-cov"]
+
+[[package]]
 name = "progress"
 version = "1.4"
 description = "Easy to use progress bars"
@@ -777,6 +848,14 @@ description = "Python parsing module"
 category = "dev"
 optional = false
 python-versions = ">=2.6, !=3.0.*, !=3.1.*, !=3.2.*"
+
+[[package]]
+name = "pyreadline"
+version = "2.1"
+description = "A python implmementation of GNU readline."
+category = "main"
+optional = false
+python-versions = "*"
 
 [[package]]
 name = "pyrsistent"
@@ -962,6 +1041,17 @@ optional = false
 python-versions = ">=3.5"
 
 [[package]]
+name = "sympy"
+version = "1.8"
+description = "Computer algebra system (CAS) in Python"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+mpmath = ">=0.19"
+
+[[package]]
 name = "tabulate"
 version = "0.8.9"
 description = "Pretty-print tabular data"
@@ -1049,7 +1139,7 @@ python-versions = "*"
 name = "wcwidth"
 version = "0.2.5"
 description = "Measures the displayed width of unicode strings in a terminal"
-category = "dev"
+category = "main"
 optional = false
 python-versions = "*"
 
@@ -1093,7 +1183,7 @@ tabulate = ">=0.8.2,<1.0.0"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "3297d8ec6a36acf09dd3addf27afb7c1d0536072be03c059e13a06c4b8a549b4"
+content-hash = "870020961819e6719c0be2836e2c94b7c7b7301bd3d429471ee3a368a0d6847b"
 
 [metadata.files]
 appdirs = [
@@ -1143,6 +1233,10 @@ attrs = [
 backcall = [
     {file = "backcall-0.2.0-py2.py3-none-any.whl", hash = "sha256:fbbce6a29f263178a1f7915c1940bde0ec2b2a967566fe1c65c1dfb7422bd255"},
     {file = "backcall-0.2.0.tar.gz", hash = "sha256:5cbdbf27be5e7cfadb448baf0aa95508f91f2bbc6c6437cd9cd06e2a4c215e1e"},
+]
+beartype = [
+    {file = "beartype-0.7.1-py3-none-any.whl", hash = "sha256:2bdd7da07c017c82380162d67d3331a48c6b608d8e1c65508f6951e8c7afce8f"},
+    {file = "beartype-0.7.1.tar.gz", hash = "sha256:0ea3b0b7983e4bdabb47ad299a4ba11cc48beaedabaf89752eea27cb6152e5c1"},
 ]
 black = [
     {file = "black-21.7b0-py3-none-any.whl", hash = "sha256:1c7aa6ada8ee864db745b22790a32f94b2795c253a75d6d9b5e439ff10d23116"},
@@ -1202,6 +1296,10 @@ cffi = [
 click = [
     {file = "click-7.1.2-py2.py3-none-any.whl", hash = "sha256:dacca89f4bfadd5de3d7489b7c8a566eee0d3676333fbb50030263894c38c0dc"},
     {file = "click-7.1.2.tar.gz", hash = "sha256:d2b5255c7c6349bc1bd1e59e08cd12acbbd63ce649f2588755783aa94dfb6b1a"},
+]
+codetiming = [
+    {file = "codetiming-1.3.0-py3-none-any.whl", hash = "sha256:1d7daa7f13354371cdd54999a5064350f7c551fe1a6b7e870eea9fce3abb2c09"},
+    {file = "codetiming-1.3.0.tar.gz", hash = "sha256:7f9949dad6438f458a22b811b0738c55e45f685d27551352871e15811f3a5e89"},
 ]
 colorama = [
     {file = "colorama-0.4.4-py2.py3-none-any.whl", hash = "sha256:9f47eda37229f68eee03b24b9748937c7dc3868f906e8ba69fbcbdd3bc5dc3e2"},
@@ -1299,6 +1397,10 @@ gitdb = [
 gitpython = [
     {file = "GitPython-3.1.20-py3-none-any.whl", hash = "sha256:b1e1c269deab1b08ce65403cf14e10d2ef1f6c89e33ea7c5e5bb0222ea593b8a"},
     {file = "GitPython-3.1.20.tar.gz", hash = "sha256:df0e072a200703a65387b0cfdf0466e3bab729c0458cf6b7349d0e9877636519"},
+]
+humanfriendly = [
+    {file = "humanfriendly-9.2-py2.py3-none-any.whl", hash = "sha256:332da98c24cc150efcc91b5508b19115209272bfdf4b0764a56795932f854271"},
+    {file = "humanfriendly-9.2.tar.gz", hash = "sha256:f7dba53ac7935fd0b4a2fc9a29e316ddd9ea135fb3052d3d0279d10c18ff9c48"},
 ]
 iniconfig = [
     {file = "iniconfig-1.1.1-py2.py3-none-any.whl", hash = "sha256:011e24c64b7f47f6ebd835bb12a743f2fbe9a26d4cecaa7f53bc4f35ee9da8b3"},
@@ -1409,6 +1511,14 @@ mistune = [
     {file = "mistune-0.8.4-py2.py3-none-any.whl", hash = "sha256:88a1051873018da288eee8538d476dffe1262495144b33ecb586c4ab266bb8d4"},
     {file = "mistune-0.8.4.tar.gz", hash = "sha256:59a3429db53c50b5c6bcc8a07f8848cb00d7dc8bdb431a4ab41920d201d4756e"},
 ]
+more-itertools = [
+    {file = "more-itertools-8.8.0.tar.gz", hash = "sha256:83f0308e05477c68f56ea3a888172c78ed5d5b3c282addb67508e7ba6c8f813a"},
+    {file = "more_itertools-8.8.0-py3-none-any.whl", hash = "sha256:2cf89ec599962f2ddc4d568a05defc40e0a587fbc10d5989713638864c36be4d"},
+]
+mpmath = [
+    {file = "mpmath-1.2.1-py3-none-any.whl", hash = "sha256:604bc21bd22d2322a177c73bdb573994ef76e62edd595d17e00aff24b0667e5c"},
+    {file = "mpmath-1.2.1.tar.gz", hash = "sha256:79ffb45cf9f4b101a807595bcb3e72e0396202e0b1d25d689134b48c4216a81a"},
+]
 mypy-extensions = [
     {file = "mypy_extensions-0.4.3-py2.py3-none-any.whl", hash = "sha256:090fedd75945a69ae91ce1303b5824f428daf5a028d2f6ab8a299250a846f15d"},
     {file = "mypy_extensions-0.4.3.tar.gz", hash = "sha256:2d82818f5bb3e369420cb3c4060a7970edba416647068eb4c5343488a6c604a8"},
@@ -1464,6 +1574,10 @@ pluggy = [
     {file = "pluggy-0.13.1-py2.py3-none-any.whl", hash = "sha256:966c145cd83c96502c3c3868f50408687b38434af77734af1e9ca461a4081d2d"},
     {file = "pluggy-0.13.1.tar.gz", hash = "sha256:15b2acde666561e1298d71b523007ed7364de07029219b604cf808bfa1c765b0"},
 ]
+prettytable = [
+    {file = "prettytable-2.1.0-py3-none-any.whl", hash = "sha256:bb5abc72bdfae6f3cdadb04fb7726f6915af0ddb7c897a41d4ad7736d9bfd8fd"},
+    {file = "prettytable-2.1.0.tar.gz", hash = "sha256:5882ed9092b391bb8f6e91f59bcdbd748924ff556bb7c634089d5519be87baa0"},
+]
 progress = [
     {file = "progress-1.4.tar.gz", hash = "sha256:5e2f9da88ed8236a76fffbee3ceefd259589cf42dfbc2cec2877102189fae58a"},
 ]
@@ -1502,6 +1616,11 @@ pygments = [
 pyparsing = [
     {file = "pyparsing-2.4.7-py2.py3-none-any.whl", hash = "sha256:ef9d7589ef3c200abe66653d3f1ab1033c3c419ae9b9bdb1240a85b024efc88b"},
     {file = "pyparsing-2.4.7.tar.gz", hash = "sha256:c203ec8783bf771a155b207279b9bccb8dea02d8f0c9e5f8ead507bc3246ecc1"},
+]
+pyreadline = [
+    {file = "pyreadline-2.1.win-amd64.exe", hash = "sha256:9ce5fa65b8992dfa373bddc5b6e0864ead8f291c94fbfec05fbd5c836162e67b"},
+    {file = "pyreadline-2.1.win32.exe", hash = "sha256:65540c21bfe14405a3a77e4c085ecfce88724743a4ead47c66b84defcf82c32e"},
+    {file = "pyreadline-2.1.zip", hash = "sha256:4530592fc2e85b25b1a9f79664433da09237c1a270e4d78ea5aa3a2c7229e2d1"},
 ]
 pyrsistent = [
     {file = "pyrsistent-0.18.0-cp36-cp36m-macosx_10_9_x86_64.whl", hash = "sha256:f4c8cabb46ff8e5d61f56a037974228e978f26bfefce4f61a4b1ac0ba7a2ab72"},
@@ -1653,6 +1772,10 @@ six = [
 smmap = [
     {file = "smmap-4.0.0-py2.py3-none-any.whl", hash = "sha256:a9a7479e4c572e2e775c404dcd3080c8dc49f39918c2cf74913d30c4c478e3c2"},
     {file = "smmap-4.0.0.tar.gz", hash = "sha256:7e65386bd122d45405ddf795637b7f7d2b532e7e401d46bbe3fb49b9986d5182"},
+]
+sympy = [
+    {file = "sympy-1.8-py3-none-any.whl", hash = "sha256:3b0b3776e357f789951bb14776c6a841f931680f20d5f8fe55977885657c9b7a"},
+    {file = "sympy-1.8.tar.gz", hash = "sha256:1ca588a9f6ce6a323c5592f9635159c2093572826668a1022c75c75bdf0297cb"},
 ]
 tabulate = [
     {file = "tabulate-0.8.9-py3-none-any.whl", hash = "sha256:d7c013fe7abbc5e491394e10fa845f8f32fe54f8dc60c6622c6cf482d25d47e4"},

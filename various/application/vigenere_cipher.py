@@ -12,34 +12,30 @@ from codetiming import Timer
 _accepted_modes: Type[int] = Literal[1, -1]
 
 _a_letter: str = "a"
-_a_ord: int = ord(_a_letter)
-_alphabet_length: int = len(ascii_lowercase)
 
-_index_to_letter: Callable[[int], str] = cache(ascii_lowercase.__getitem__)
 _is_letter: Callable[[str], bool] = cache(str.isalpha)
 _lowercase: Callable[[str], str] = cache(str.lower)
-_uppercase: Callable[[str], str] = cache(str.upper)
 
 
 @cache
 def _letter_to_index(letter: str) -> int:
-    return ord(letter) - _a_ord
+    return ord(letter) - ord(_a_letter)
 
 
 def _letter_converter(message: str, sign: _accepted_modes, key: str) -> str:
-    result_char: str = _index_to_letter(
+    result_char: str = ascii_lowercase[
         (_letter_to_index(_lowercase(message)) + sign * _letter_to_index(key))
-        % _alphabet_length
-    )
+        % len(ascii_lowercase)
+    ]
 
     if message.isupper():
-        result_char = _uppercase(result_char)
+        result_char = result_char.upper()
 
     return result_char
 
 
 def vigenere_function(
-        message: str, decode_mode: _accepted_modes = 1, key: str = ""
+    message: str, decode_mode: _accepted_modes = 1, key: str = ""
 ) -> str:
     """
 

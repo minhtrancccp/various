@@ -27,7 +27,11 @@ def sieve(limit: int) -> Iterator[int]:
                         prime_map[value] = False
 
 
-if __name__ == "__main__":
+def main():
     CONST: int = 10 ** 5
     with Timer():
         print(*sieve(CONST), sep="\n")
+
+
+if __name__ == "__main__":
+    main()
