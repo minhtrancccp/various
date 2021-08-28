@@ -1,5 +1,4 @@
 """
-Given a function that generates a random float between 0 and 1, estimate Pi
 References:
     https://youtu.be/pvimAM_SLic
 """
@@ -26,8 +25,6 @@ def pi_estimation(points_count: int) -> float:
         Estimated value of Pi
 
     """
-    # Given a quadrant with the radius of 1 and the origin as its centre
-    # Find out how many points with randomly generated coordinates are inside the quadrant
     points_in_circle_count: int = sum(
         hypot(random(), random()) <= 1 for _ in range(points_count)
     )
