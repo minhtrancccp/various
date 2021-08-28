@@ -5,19 +5,20 @@ References:
 from collections.abc import Iterator
 from functools import cache
 from itertools import count, islice, takewhile
+from typing import Type
 
 from beartype import beartype
 from codetiming import Timer
 from prettytable import PrettyTable
 from sympy import fibonacci
 
-_sequence_type = Iterator[int]
+sequence_type: Type[Iterator] = Iterator[int]
 
 
 @beartype
 def infinite_generator(
-        start_from_one: bool = True, imported_generator_used: bool = True
-) -> _sequence_type:
+    start_from_one: bool = True, imported_generator_used: bool = True
+) -> sequence_type:
     """
     Generate Fibonacci numbers infinitely
 
@@ -25,7 +26,7 @@ def infinite_generator(
     ----------
     start_from_one : bool, optional
         Boolean flag whether the first value of the sequence is 1 or 0
-        (default is True, meaning the sequence starts from 1)
+        (default is True, meaning the sequence will be 1, 2, 3, 5, etc.)
     imported_generator_used : bool, optional
         Boolean flag whether sympy.fibonacci function or recursive method is used to generate the sequence
         (default is True, meaning sympy.fibonacci function is used)
@@ -37,7 +38,9 @@ def infinite_generator(
 
     """
     if imported_generator_used:
-        yield from map(fibonacci, count(2 * start_from_one))
+        index: int
+        for index in count(2 * start_from_one):
+            yield int(fibonacci(index))
 
     else:
         current: int = int(start_from_one)
@@ -50,8 +53,8 @@ def infinite_generator(
 
 @beartype
 def length_generator(
-        length: int, start_from_one: bool = True, imported_generator_used: bool = True
-) -> _sequence_type:
+    length: int, start_from_one: bool = True, imported_generator_used: bool = True
+) -> sequence_type:
     """
     Generate first n Fibonacci numbers
 
@@ -61,7 +64,7 @@ def length_generator(
         The length n of the generated sequence, must be a positive integer (i.e. >= 1)
     start_from_one : bool, optional
         Boolean flag whether sequence starts from 1 or 0
-        (default is True, meaning the sequence starts from 1)
+        (default is True, meaning the sequence will be 1, 2, 3, 5, etc.)
     imported_generator_used : bool, optional
         Boolean flag whether sympy.fibonacci function or recursive technique is used to generate the sequence
         (default is True, meaning sympy.fibonacci function is used)
@@ -81,8 +84,8 @@ def length_generator(
 
 @beartype
 def max_generator(
-        max_value: int, start_from_one: bool = True, imported_generator_used: bool = True
-) -> _sequence_type:
+    max_value: int, start_from_one: bool = True, imported_generator_used: bool = True
+) -> sequence_type:
     """
     Generate Fibonacci numbers upto and including given value
 
@@ -92,7 +95,7 @@ def max_generator(
         The maximum Fibonacci number to be generated
     start_from_one : bool, optional
         Boolean flag whether sequence starts from 1 or 0
-        (default is True, meaning the sequence starts from 1)
+        (default is True, meaning the sequence will be 1, 2, 3, 5, etc.)
     imported_generator_used : bool, optional
         Boolean flag whether sympy.fibonacci function or recursive technique is used to generate the sequence
         (default is True, meaning sympy.fibonacci function is used)
@@ -103,8 +106,8 @@ def max_generator(
         Fibonacci numbers satisfying the conditions
 
     """
-    if max_value <= 1:
-        raise ValueError(f"{max_value=} is not a non-negative integer")
+    if max_value <= -1:
+        raise ValueError(f"{max_value = } is not a non-negative integer")
 
     yield from takewhile(
         max_value.__ge__, infinite_generator(start_from_one, imported_generator_used)
@@ -139,14 +142,16 @@ def recursive_function(index: int) -> int:
         return recursive_function(index - 1) + recursive_function(index - 2)
 
 
-def _test_factory(value: int) -> tuple[int, int]:
+def _row_factory(value: int) -> tuple[int, int]:
     return value, recursive_function(value)
 
 
-if __name__ == "__main__":
+def main():
     fibonacci_table: PrettyTable = PrettyTable(["Index", "Value"])
-
     with Timer():
-        fibonacci_table.add_rows(reversed([*map(_test_factory, range(100, -1, -1))]))
-
+        fibonacci_table.add_rows(reversed([*map(_row_factory, range(100, -1, -1))]))
     print(fibonacci_table)
+
+
+if __name__ == "__main__":
+    main()

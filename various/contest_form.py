@@ -5,9 +5,8 @@ def get_num_input() -> Iterator[int]:
     return map(int, input().split())
 
 
-def main() -> None:
-    # Placeholder
-    pass
+def main():
+    ...
 
 
 if __name__ == "__main__":

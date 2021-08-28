@@ -4,3 +4,5 @@
 # Ignore dirs starting with . or __
 .*/
 __*/
+
+/whatever.py

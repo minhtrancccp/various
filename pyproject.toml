@@ -9,18 +9,18 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.9"
 
-beartype = {version = "^0.7.1", allow-prereleases = true}
-codetiming = {version = "^1.3.0", allow-prereleases = true}
-more-itertools = {version = "^8.8.0", allow-prereleases = true}
-prettytable = {version = "^2.1.0", allow-prereleases = true}
-sympy = {version = "^1.8", allow-prereleases = true}
-humanfriendly = {version = "^9.2", allow-prereleases = true}
+beartype = { version = "^0.7.1", allow-prereleases = true }
+codetiming = { version = "^1.3.0", allow-prereleases = true }
+more-itertools = { version = "^8.8.0", allow-prereleases = true }
+prettytable = { version = "^2.1.0", allow-prereleases = true }
+sympy = { version = "^1.8", allow-prereleases = true }
 
 [tool.poetry.dev-dependencies]
 black = { version = "^21.6b0", allow-prereleases = true }
+gmpy2 = { url = "https://github.com/aleaxit/gmpy/releases/download/gmpy2-2.1.0b6/gmpy2-2.1.0b6-cp39-cp39-win_amd64.whl" }
 jupyter = { version = "^1.0.0", allow-prereleases = true }
 pytest = { version = "^6.2.4", allow-prereleases = true }
-rope = {version = "^0.19.0", allow-prereleases = true}
+rope = { version = "^0.19.0", allow-prereleases = true }
 wily = { version = "^1.20.0", allow-prereleases = true }
 
 [build-system]

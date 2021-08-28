@@ -7,6 +7,7 @@ from functools import cache
 from math import prod
 from typing import Optional
 
+from beartype import beartype
 from codetiming import Timer
 
 
@@ -21,6 +22,7 @@ def _prod_test(digits: list[int]) -> Optional[int]:
 
 
 @cache
+@beartype
 def persistence(number: int, key: Callable[[list[int]], int] = prod) -> int:
     """
     Count how many times the "key" operation has to be repeated for the number to reach its digital root
@@ -40,6 +42,7 @@ def persistence(number: int, key: Callable[[list[int]], int] = prod) -> int:
 
     """
     if number <= -1:
+        # Rewrite
         raise ValueError(
             f"Input number must be greater than or equal to 0, but {number = }"
         )
