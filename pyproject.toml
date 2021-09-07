@@ -9,19 +9,25 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.9"
 
-beartype = { version = "^0.7.1", allow-prereleases = true }
-codetiming = { version = "^1.3.0", allow-prereleases = true }
-more-itertools = { version = "^8.8.0", allow-prereleases = true }
-prettytable = { version = "^2.1.0", allow-prereleases = true }
-sympy = { version = "^1.8", allow-prereleases = true }
+beartype = { allow-prereleases = true, version = "^0.8.1" }
+codetiming = { allow-prereleases = true, version = "^1.3.0" }
+more-itertools = { allow-prereleases = true, version = "^8.8.0" }
+prettytable = { allow-prereleases = true, version = "^2.1.0" }
+sympy = { allow-prereleases = true, version = "^1.8" }
+
+gmpy2 = { url = "https://github.com/aleaxit/gmpy/releases/download/gmpy2-2.1.0rc1/gmpy2-2.1.0rc1-cp39-cp39-win_amd64.whl" }
 
 [tool.poetry.dev-dependencies]
-black = { version = "^21.6b0", allow-prereleases = true }
-gmpy2 = { url = "https://github.com/aleaxit/gmpy/releases/download/gmpy2-2.1.0b6/gmpy2-2.1.0b6-cp39-cp39-win_amd64.whl" }
-jupyter = { version = "^1.0.0", allow-prereleases = true }
-pytest = { version = "^6.2.4", allow-prereleases = true }
-rope = { version = "^0.19.0", allow-prereleases = true }
-wily = { version = "^1.20.0", allow-prereleases = true }
+black = { allow-prereleases = true, extras = ["jupyter"], version = "^21.8b0" }
+isort = { allow-prereleases = true, version = "^5.9.3" }
+jupyter = { allow-prereleases = true, version = "^1.0.0" }
+pre-commit = { allow-prereleases = true, version = "^2.15.0" }
+pytest = { allow-prereleases = true, version = "^6.2.4" }
+wily = { allow-prereleases = true, version = "^1.20.0" }
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
 
 [build-system]
 requires = ["poetry-core"]

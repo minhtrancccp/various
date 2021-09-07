@@ -12,13 +12,13 @@ from codetiming import Timer
 from prettytable import PrettyTable
 from sympy import fibonacci
 
-sequence_type: Type[Iterator] = Iterator[int]
+iterator_type: Type[Iterator] = Iterator[int]
 
 
 @beartype
 def infinite_generator(
     start_from_one: bool = True, imported_generator_used: bool = True
-) -> sequence_type:
+) -> iterator_type:
     """
     Generate Fibonacci numbers infinitely
 
@@ -54,7 +54,7 @@ def infinite_generator(
 @beartype
 def length_generator(
     length: int, start_from_one: bool = True, imported_generator_used: bool = True
-) -> sequence_type:
+) -> iterator_type:
     """
     Generate first n Fibonacci numbers
 
@@ -85,9 +85,9 @@ def length_generator(
 @beartype
 def max_generator(
     max_value: int, start_from_one: bool = True, imported_generator_used: bool = True
-) -> sequence_type:
+) -> iterator_type:
     """
-    Generate Fibonacci numbers upto and including given value
+    Generate Fibonacci numbers up to and including given value
 
     Parameters
     ----------

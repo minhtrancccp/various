@@ -2,7 +2,7 @@
 References:
     https://en.wikipedia.org/wiki/Fizz_buzz
 """
-from collections.abc import Iterator
+from collections.abc import Iterable
 from typing import NamedTuple
 
 
@@ -13,10 +13,9 @@ class FactorEquivalent(NamedTuple):
 
 class FizzBuzz:
     def __init__(self, *factors: FactorEquivalent):
-        self._factors: Iterator[FactorEquivalent] = (
-            sorted(factors)
-            if factors
-            else (FactorEquivalent(3, "Fizz"), FactorEquivalent(5, "Buzz"))
+        self._factors: Iterable[FactorEquivalent] = sorted(factors) or (
+            FactorEquivalent(3, "Fizz"),
+            FactorEquivalent(5, "Buzz"),
         )
 
     def result(self, number: int) -> str:

@@ -1,6 +1,6 @@
 from codetiming import Timer
 
-from various.vigenere_cipher import vigenere_function,Modes
+from various.vigenere_cipher import Modes, vigenere_function
 
 
 @Timer(text="\n{} seconds")
