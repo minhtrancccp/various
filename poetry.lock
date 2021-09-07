@@ -293,6 +293,7 @@ python-versions = "*"
 [package.source]
 type = "url"
 url = "https://github.com/aleaxit/gmpy/releases/download/gmpy2-2.1.0rc1/gmpy2-2.1.0rc1-cp39-cp39-win_amd64.whl"
+
 [[package]]
 name = "identify"
 version = "2.2.13"
@@ -682,6 +683,22 @@ traitlets = ">=4.1"
 [package.extras]
 fast = ["fastjsonschema"]
 test = ["check-manifest", "fastjsonschema", "testpath", "pytest", "pytest-cov"]
+
+[[package]]
+name = "nbqa"
+version = "1.1.0"
+description = "Run any standard Python code quality tool on a Jupyter Notebook"
+category = "dev"
+optional = false
+python-versions = ">=3.6.0"
+
+[package.dependencies]
+ipython = ">=7.8.0"
+tokenize-rt = ">=3.2.0"
+tomli = "<2.0.0"
+
+[package.extras]
+toolchain = ["black", "flake8", "isort", "mypy", "pylint", "pyupgrade"]
 
 [[package]]
 name = "nest-asyncio"
@@ -1273,7 +1290,7 @@ tabulate = ">=0.8.2,<1.0.0"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "a4a21be17f16135451888db14f2962d73adc065d0aaa8aab4cc5db8e32e59da4"
+content-hash = "219ecffefeaf826bb351a4a0a807788fe0732f8b703110c9248af2f5db1a5af5"
 
 [metadata.files]
 appnope = [
@@ -1646,6 +1663,10 @@ nbconvert = [
 nbformat = [
     {file = "nbformat-5.1.3-py3-none-any.whl", hash = "sha256:eb8447edd7127d043361bc17f2f5a807626bc8e878c7709a1c647abda28a9171"},
     {file = "nbformat-5.1.3.tar.gz", hash = "sha256:b516788ad70771c6250977c1374fcca6edebe6126fd2adb5a69aa5c2356fd1c8"},
+]
+nbqa = [
+    {file = "nbqa-1.1.0-py3-none-any.whl", hash = "sha256:8294dc53725cad0f32c7249018c24aa4b50f681266ddf83b9e0a5094328baf18"},
+    {file = "nbqa-1.1.0.tar.gz", hash = "sha256:4104e5c8d4ff01e751e33d435f5557dcaa552657ae892dd9c207bc8cde5f171a"},
 ]
 nest-asyncio = [
     {file = "nest_asyncio-1.5.1-py3-none-any.whl", hash = "sha256:76d6e972265063fe92a90b9cc4fb82616e07d586b346ed9d2c89a4187acea39c"},
