@@ -293,7 +293,6 @@ python-versions = "*"
 [package.source]
 type = "url"
 url = "https://github.com/aleaxit/gmpy/releases/download/gmpy2-2.1.0rc1/gmpy2-2.1.0rc1-cp39-cp39-win_amd64.whl"
-
 [[package]]
 name = "identify"
 version = "2.2.13"
@@ -1131,7 +1130,7 @@ widechars = ["wcwidth"]
 
 [[package]]
 name = "terminado"
-version = "0.11.1"
+version = "0.12.0"
 description = "Tornado websocket backend for the Xterm.js Javascript terminal emulator library."
 category = "dev"
 optional = false
@@ -1941,8 +1940,8 @@ tabulate = [
     {file = "tabulate-0.8.9.tar.gz", hash = "sha256:eb1d13f25760052e8931f2ef80aaf6045a6cceb47514db8beab24cded16f13a7"},
 ]
 terminado = [
-    {file = "terminado-0.11.1-py3-none-any.whl", hash = "sha256:9e0457334863be3e6060c487ad60e0995fa1df54f109c67b24ff49a4f2f34df5"},
-    {file = "terminado-0.11.1.tar.gz", hash = "sha256:962b402edbb480718054dc37027bada293972ecadfb587b89f01e2b8660a2132"},
+    {file = "terminado-0.12.0-py3-none-any.whl", hash = "sha256:bd8c2ecfa0516a2a80b7836421d0be61af6a2e84e1e75eee95eb019e138eb639"},
+    {file = "terminado-0.12.0.tar.gz", hash = "sha256:00927a0bc2e1e5d5728580910d82191ad7315fef0006a8b74ff940b34a916e16"},
 ]
 testpath = [
     {file = "testpath-0.5.0-py3-none-any.whl", hash = "sha256:8044f9a0bab6567fc644a3593164e872543bb44225b0e24846e2c89237937589"},
