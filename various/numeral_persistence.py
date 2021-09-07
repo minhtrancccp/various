@@ -2,7 +2,7 @@
 References:
     https://en.wikipedia.org/wiki/Persistence_of_a_number
 """
-from collections import Callable
+from collections.abc import Callable
 from functools import cache
 from math import prod
 from typing import Optional

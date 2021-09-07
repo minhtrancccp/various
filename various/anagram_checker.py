@@ -7,14 +7,15 @@ from string import ascii_lowercase
 
 from beartype import beartype
 from more_itertools import all_equal
-from sympy import prime
+from sympy import prime, primerange
 
 
 class _ProductEquivalent:
     def __init__(self):
-        self._char_prime_dict: dict[str, int] = {
-            char: prime(index) for index, char in enumerate(ascii_lowercase, start=1)
-        }
+        twenty_seventh_prime: int = 103
+        self._char_prime_dict: dict[str, int] = dict(
+            zip(ascii_lowercase, primerange(2, twenty_seventh_prime))
+        )
 
     def word_to_product(self, word: str) -> int:
         return prod(
