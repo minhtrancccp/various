@@ -1,9 +1,6 @@
 """
 References:
     https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher
-
-TODO:
-    - Look for str.isalpha documentation (!)
 """
 from enum import Enum
 from itertools import cycle
@@ -31,6 +28,8 @@ def _char_converter(message: str, mode: Modes, key: str) -> str:
 
 @beartype
 def vigenere_function(message: str, mode: Modes, key: str = "") -> str:
+    # TODO: Replace str.isalpha with a method for filtering out non-English chars and remove "printable" constraints
+    #  for the test method (!)
     filtered_key: list[str] = [*filter(str.isalpha, key.lower())]
     if filtered_key.count("a") == len(filtered_key):
         return message

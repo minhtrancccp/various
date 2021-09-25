@@ -8,9 +8,8 @@ from typing import Union
 
 from miscellaneous_python.fibonacci_sequence import length_generator, max_generator
 
-_replace_args: tuple[str, str, int] = ("011", "100", 1)
 
-
+# TODO: Consider the need for the wrapper
 def _wrapper(
     func: Callable[[str], Union[int, str]]
 ) -> Callable[[str], Union[int, str]]:
@@ -42,8 +41,9 @@ def decimal_to_zeckendorf(integer: int) -> str:
 
 @_wrapper
 def fibonacci_to_zeckendorf(fibonacci_sequence: str) -> str:
+    replace_args: tuple[str, str, int] = ("011", "100", 1)
     return (
-        fibonacci_to_zeckendorf(f"0{fibonacci_sequence}".replace(*_replace_args))
+        fibonacci_to_zeckendorf(f"0{fibonacci_sequence}".replace(*replace_args))
         if "11" in fibonacci_sequence
         else fibonacci_sequence.lstrip("0")
     )
