@@ -1,11 +1,15 @@
 from math import factorial
 
-from codetiming import Timer
+from pytest import fixture, mark
 
-from various.fizz_buzz import FizzBuzz
+from miscellaneous_python.fizz_buzz import FizzBuzz
 
 
-@Timer(text="\n{} seconds")
-def test_fb():
-    new_fizz_buzz: FizzBuzz = FizzBuzz()
-    assert new_fizz_buzz.result(factorial(15)) == "FizzBuzz"
+@fixture
+def fizzbuzz_machine():
+    return FizzBuzz()
+
+
+@mark.parametrize("value, output", [(factorial(15), "FizzBuzz")])
+def test_fizz_buzz(fizzbuzz_machine, value, output):
+    assert fizzbuzz_machine.result(value) == output

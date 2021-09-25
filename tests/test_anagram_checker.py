@@ -1,16 +1,31 @@
-"""
-TODO:
-    - Rewrite into at least 3 functions: one for passing, one for not passing, and one for wrong data types
-    - Add time measurement for the passing tests
-"""
-from codetiming import Timer
+from pytest import fixture, mark
 
-from various.anagram_checker import Anagram
-
-english_anagram_checker: Anagram = Anagram()
+from miscellaneous_python.anagram_checker import Anagram
 
 
-@Timer(text="\n{} seconds")
-def test_anagram_check():
-    assert english_anagram_checker.are_anagrams("Silent", "Listen")
-    assert not english_anagram_checker.are_anagrams("when", "what")
+@fixture
+def anagram_machine() -> Anagram:
+    return Anagram()
+
+
+@mark.parametrize(
+    "are_anagrams_params",
+    [
+        ("where",),
+        ("Silent", "Listen"),
+        ("Anagram", "Nag a ram"),
+        ("liter", "litre", "tiler"),
+        ("ArE", "eAr"),
+        # ("$&%367#%&56", " 5&467865{|:$ 5"),
+    ],
+)
+def test_are_anagrams(anagram_machine: Anagram, are_anagrams_params: tuple[str, ...]):
+    assert anagram_machine.are_anagrams(*are_anagrams_params)
+
+
+@mark.parametrize(
+    "not_anagrams_params",
+    [("where", "when"), ("nag", "Gram"), ("liter", "litre", "tiler", "peril")],
+)
+def test_not_anagrams(anagram_machine: Anagram, not_anagrams_params: tuple[str, ...]):
+    assert not anagram_machine.are_anagrams(*not_anagrams_params)

@@ -1,8 +1,16 @@
-from codetiming import Timer
+from string import printable
 
-from various.vigenere_cipher import Modes, vigenere_function
+from hypothesis import given
+from hypothesis.strategies import text
+
+from miscellaneous_python.vigenere_cipher import Modes, vigenere_function
 
 
-@Timer(text="\n{} seconds")
-def test_vigenere():
-    assert vigenere_function("ATTACKATDAWN", Modes.ENCODE, "LEMON") == "LXFOPVEFRNHR"
+@given(text(printable), text())
+def test_vigenere_hypothesis(message, key):
+    assert (
+        vigenere_function(
+            vigenere_function(message, Modes.ENCODE, key), Modes.DECODE, key
+        )
+        == message
+    )
