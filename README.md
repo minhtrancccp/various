@@ -1,7 +1,7 @@
 
-# miscellaneous
+# miscellaneous-python
 
-[![GitHub](https://img.shields.io/github/license/minhtrancccp/miscellaneous?style=for-the-badge)](https://github.com/minhtrancccp/miscellaneous/blob/master/COPYING)
+[![GitHub](https://img.shields.io/github/license/minhtrancccp/miscellaneous-python)](https://github.com/minhtrancccp/miscellaneous-python/blob/master/COPYING)
 
 A repo where I experiment and share my coding ideas, feel free to contribute to it
 
@@ -33,10 +33,10 @@ poetry run pytest
 
 Contributions are always welcome!
 
-Send your ideas to the [Issues section](https://github.com/minhtrancccp/miscellaneous/issues), or make a new PR if necessary.
+Send your ideas to the [Issues section](https://github.com/minhtrancccp/miscellaneous-python/issues), or make a new PR if necessary.
 
 ## License
 
 Copyright © 2021 [Minh Tran](https://github.com/minhtrancccp).
 
-This project is [GNU GPLv3](https://github.com/minhtrancccp/miscellaneous/blob/master/COPYING) licensed.
+This project is [GNU GPLv3](https://github.com/minhtrancccp/miscellaneous-python/blob/master/COPYING) licensed.
