@@ -1,0 +1,25 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+repos:
+  - repo: local
+    hooks:
+      - id: black
+        name: black
+        entry: black
+        language: system
+        types_or: [ jupyter, python ]
+
+      - id: isort-python
+        name: isort (python files)
+        entry: isort
+        language: system
+        types: [ python ]
+
+      - id: isort-jupyter
+        name: isort (jupyter files)
+        entry: nbqa isort
+        language: system
+        types: [ jupyter ]
+
+
+

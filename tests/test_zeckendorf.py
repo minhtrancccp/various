@@ -1,4 +1,4 @@
-from various.zeckendorf import (
+from miscellaneous_python.zeckendorf import (
     decimal_to_zeckendorf,
     fibonacci_to_decimal,
     fibonacci_to_zeckendorf,

@@ -1,10 +1,11 @@
-from typing import Optional
+from pytest import mark
 
-from various.climbing_snail import time_finder
+from miscellaneous_python.climbing_snail import time_finder
 
 
-def test_time_finder():
-    test_cases: tuple[tuple[tuple[int, int, int], Optional[int]], ...] = (
+@mark.parametrize(
+    "inputs, output",
+    [
         ((30, 3, 2), 28),
         ((84, 17, 15), 35),
         ((79, 15, 9), 12),
@@ -14,9 +15,7 @@ def test_time_finder():
         ((7, 7, 7), 1),
         ((69, 3, 8), None),
         ((81, 14, 14), None),
-    )
-
-    params: tuple[int, int, int]
-    result: Optional[int]
-    for params, result in test_cases:
-        assert time_finder(*params) == result
+    ],
+)
+def test_time_finder(inputs, output):
+    assert time_finder(*inputs) == output

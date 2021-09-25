@@ -1,6 +1,9 @@
 """
 References:
     https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher
+
+TODO:
+    - Look for str.isalpha documentation (!)
 """
 from enum import Enum
 from itertools import cycle
@@ -14,28 +17,28 @@ class Modes(Enum):
     DECODE = -1
 
 
-def _char_converter(given: str, mode: Modes, key: str) -> str:
+def _char_converter(message: str, mode: Modes, key: str) -> str:
     result_char: str = ascii_lowercase[
-        (ascii_lowercase.find(given.lower()) + mode.value * ascii_lowercase.find(key))
+        (ascii_lowercase.find(message.lower()) + mode.value * ascii_lowercase.find(key))
         % len(ascii_lowercase)
     ]
 
-    if given.isupper():
+    if message.isupper():
         result_char = result_char.upper()
 
     return result_char
 
 
 @beartype
-def vigenere_function(given: str, mode: Modes, key: str = "") -> str:
+def vigenere_function(message: str, mode: Modes, key: str = "") -> str:
     filtered_key: list[str] = [*filter(str.isalpha, key.lower())]
-    if not filtered_key or {*filtered_key} == {"a"}:
-        return given
+    if filtered_key.count("a") == len(filtered_key):
+        return message
 
     cycled_key: cycle[str] = cycle(filtered_key)
     return "".join(
         _char_converter(message_char, mode, next(cycled_key))
         if message_char.isalpha()
         else message_char
-        for message_char in given
+        for message_char in message
     )

@@ -6,7 +6,7 @@ from collections.abc import Callable
 from itertools import compress
 from typing import Union
 
-from various.fibonacci_sequence import length_generator, max_generator
+from miscellaneous_python.fibonacci_sequence import length_generator, max_generator
 
 _replace_args: tuple[str, str, int] = ("011", "100", 1)
 
@@ -33,7 +33,7 @@ def decimal_to_zeckendorf(integer: int) -> str:
     base: int
     zeckendorf_representation: str = ""
     for base in reversed([*max_generator(integer)]):
-        digit: int = int((integer >= base))
+        digit: int = int(integer >= base)
         zeckendorf_representation += str(digit)
         integer -= base * digit
 
