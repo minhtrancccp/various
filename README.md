@@ -15,7 +15,7 @@ poetry install
 
 ## Running Tests
 
-Run the following command in the root directory or tests directory
+Run the following command either in the root directory or the ./tests directory
 
 ```sh
 poetry run pytest
