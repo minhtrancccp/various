@@ -33,7 +33,7 @@ poetry run pytest
 
 Contributions are always welcome!
 
-Send your ideas to the [Issues section](https://github.com/minhtrancccp/miscellaneous-python/issues), or make a new PR if necessary.
+Send your ideas to the Issues or Discussions section, or even make a new PR.
 
 ## License
 
