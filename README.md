@@ -2,10 +2,10 @@
 # miscellaneous-python
 
 [![GitHub](https://img.shields.io/github/license/minhtrancccp/miscellaneous-python)](https://github.com/minhtrancccp/miscellaneous-python/blob/master/COPYING)
-
 [![bear-ified](https://raw.githubusercontent.com/beartype/beartype-assets/main/badge/bear-ified.svg)](https://beartype.rtfd.io)
-[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
 
 A repo where I experiment and share my coding ideas, feel free to contribute to it.
 
@@ -33,7 +33,7 @@ poetry run pytest
 👤 **Minh Tran**
 
 - [Bio Link](https://minhtran.bio.link/)
-- Github: [@minhtrancccp](https://github.com/minhtrancccp)
+- GitHub: [@minhtrancccp](https://github.com/minhtrancccp)
 - LinkedIn: [@minhtrancccp](https://linkedin.com/in/minhtrancccp)
 
 ## Contributing
