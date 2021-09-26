@@ -16,21 +16,21 @@ gmpy2 = [
 
 beartype = { allow-prereleases = true, version = "^0.8.1" }
 codetiming = { allow-prereleases = true, version = "^1.3.0" }
-humanfriendly = { allow-prereleases = true, version = "^9.2" }
 more-itertools = { allow-prereleases = true, version = "^8.8.0" }
-numpy = { allow-prereleases = true, version = "^1.21.2" }
 prettytable = { allow-prereleases = true, version = "^2.1.0" }
+regex = { allow-prereleases = true, version = "^2021.9.24" }
 sympy = { allow-prereleases = true, version = "^1.8" }
 
 [tool.poetry.dev-dependencies]
-Faker = { allow-prereleases = true, version = "^8.13.2" }
 black = { allow-prereleases = true, extras = ["jupyter"], version = "^21.8b0" }
 coverage = { allow-prereleases = true, extras = ["toml"], version = "^5.5" }
+humanfriendly = { allow-prereleases = true, version = "^9.2" }
 hypothesis = { allow-prereleases = true, extras = ["cli", "codemods"], version = "^6.21.6" }
 identify = { allow-prereleases = true, version = "^2.2.13" }
 isort = { allow-prereleases = true, version = "^5.9.3" }
 jupyter = { allow-prereleases = true, version = "^1.0.0" }
 nbqa = { allow-prereleases = true, version = "^1.1.0" }
+numpy = { allow-prereleases = true, version = "^1.21.2" }
 pre-commit = { allow-prereleases = true, version = "^2.15.0" }
 pytest = { allow-prereleases = true, version = "^6.2.4" }
 pytest-cov = { allow-prereleases = true, version = "^2.12.1" }
