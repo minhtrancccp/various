@@ -2,8 +2,12 @@
 # miscellaneous-python
 
 [![GitHub](https://img.shields.io/github/license/minhtrancccp/miscellaneous-python)](https://github.com/minhtrancccp/miscellaneous-python/blob/master/COPYING)
+[![bear-ified](https://raw.githubusercontent.com/beartype/beartype-assets/main/badge/bear-ified.svg)](https://beartype.rtfd.io)
 
-A repo where I experiment and share my coding ideas, feel free to contribute to it
+A repo where I experiment and share my coding ideas, feel free to contribute to it.
+
+
+
 
 ## Installation
 
