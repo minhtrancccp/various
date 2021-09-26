@@ -21,8 +21,9 @@ prettytable = { allow-prereleases = true, version = "^2.1.0" }
 regex = { allow-prereleases = true, version = "^2021.9.24" }
 sympy = { allow-prereleases = true, version = "^1.8" }
 
-[tool.poetry.dev-dependencies]
+[tool.poetry.group.dev.dependencies]
 black = { allow-prereleases = true, extras = ["jupyter"], version = "^21.8b0" }
+commitizen = { allow-prereleases = true, version = "^2.18.1" }
 coverage = { allow-prereleases = true, extras = ["toml"], version = "^5.5" }
 humanfriendly = { allow-prereleases = true, version = "^9.2" }
 hypothesis = { allow-prereleases = true, extras = ["cli", "codemods"], version = "^6.21.6" }
