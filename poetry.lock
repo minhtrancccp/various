@@ -301,7 +301,6 @@ python-versions = "*"
 [package.source]
 type = "url"
 url = "https://github.com/aleaxit/gmpy/releases/download/gmpy2-2.1.0rc1/gmpy2-2.1.0rc1-cp39-cp39-win_amd64.whl"
-
 [[package]]
 name = "humanfriendly"
 version = "9.2"
@@ -1416,7 +1415,7 @@ testing = ["pytest (>=4.6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytes
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.9,<3.11"
-content-hash = "c6bbfe75832863096a75580c7362fadc3afefa6ac607f803cf8931be083d8aeb"
+content-hash = "7e22664ec56393229f28bcb015f757942f6d951c821dc64239658f9e005ca14c"
 
 [metadata.files]
 appnope = [
