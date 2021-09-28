@@ -24,23 +24,16 @@ sympy = { allow-prereleases = true, version = "^1.8" }
 [tool.poetry.group.dev.dependencies]
 black = { allow-prereleases = true, extras = ["jupyter"], version = "^21.8b0" }
 commitizen = { allow-prereleases = true, version = "^2.18.1" }
-commitizen-emoji = { allow-prereleases = true, version = "^0.1.5" }
 coverage = { allow-prereleases = true, extras = ["toml"], version = "^5.5" }
-humanfriendly = { allow-prereleases = true, version = "^9.2" }
 hypothesis = { allow-prereleases = true, extras = ["cli", "codemods"], version = "^6.21.6" }
-identify = { allow-prereleases = true, version = "^2.2.13" }
 isort = { allow-prereleases = true, version = "^5.9.3" }
 jupyter = { allow-prereleases = true, version = "^1.0.0" }
 nbqa = { allow-prereleases = true, version = "^1.1.0" }
-numpy = { allow-prereleases = true, version = "^1.21.2" }
 pre-commit = { allow-prereleases = true, version = "^2.15.0" }
 pytest = { allow-prereleases = true, version = "^6.2.4" }
 pytest-cov = { allow-prereleases = true, version = "^2.12.1" }
 pytest-randomly = { allow-prereleases = true, version = "^3.10.1" }
 radon = { allow-prereleases = true, version = "^5.1.0" }
-
-[tool.commitizen]
-name = "cz_commitizen_emoji"
 
 [tool.coverage.report]
 precision = 2
