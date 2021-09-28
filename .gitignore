@@ -1,13 +1,14 @@
-# Ignore VS Code workspace file
+# VS Code workspace file
 /*.code-workspace
 
-# Ignore all . files and . folders, except .gitignore and pre-commit config files
+# . files and . folders
 .*
 !/.gitignore
 !/.pre-commit-config.yaml
+!/.github
 
-# Ignore all __ folders
+# __ folders
 __*/
 
-Ignore all .py files in the root directory
+# .py files in the root directory
 /*.py
