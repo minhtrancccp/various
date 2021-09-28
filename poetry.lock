@@ -184,7 +184,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 
 [[package]]
 name = "commitizen"
-version = "2.18.1"
+version = "2.19.0"
 description = "Python commitizen client tool"
 category = "dev"
 optional = false
@@ -200,6 +200,17 @@ pyyaml = ">=3.08"
 questionary = ">=1.4.0,<2.0.0"
 termcolor = ">=1.1,<2.0"
 tomlkit = ">=0.5.3,<1.0.0"
+
+[[package]]
+name = "commitizen-emoji"
+version = "0.1.5"
+description = ""
+category = "dev"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+commitizen = "*"
 
 [[package]]
 name = "commonmark"
@@ -276,11 +287,15 @@ python-versions = ">=2.7"
 
 [[package]]
 name = "filelock"
-version = "3.0.12"
+version = "3.1.0"
 description = "A platform independent file lock."
 category = "dev"
 optional = false
-python-versions = "*"
+python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,>=2.7"
+
+[package.extras]
+docs = ["furo (>=2021.8.17b43)", "sphinx (>=4.1)", "sphinx-autodoc-typehints (>=1.12)"]
+testing = ["coverage (>=4)", "pytest (>=4)", "pytest-cov"]
 
 [[package]]
 name = "future"
@@ -1415,7 +1430,7 @@ testing = ["pytest (>=4.6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytes
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.9,<3.11"
-content-hash = "7e22664ec56393229f28bcb015f757942f6d951c821dc64239658f9e005ca14c"
+content-hash = "a992a0f087037e1a56a05b3656ec601c22ab3f107a84aea03af2c1629c4de122"
 
 [metadata.files]
 appnope = [
@@ -1531,8 +1546,11 @@ colorama = [
     {file = "colorama-0.4.4.tar.gz", hash = "sha256:5941b2b48a20143d2267e95b1c2a7603ce057ee39fd88e7329b0c292aa16869b"},
 ]
 commitizen = [
-    {file = "commitizen-2.18.1-py3-none-any.whl", hash = "sha256:9cbf01b95b19296f75f9c94dadfff9000742ea3d197ef6b7bbc4ea2ba2b73bba"},
-    {file = "commitizen-2.18.1.tar.gz", hash = "sha256:76b83d2e0f00e5aeef823dd8d4b289c92da980cb4233065f4a8c59bf3078ef18"},
+    {file = "commitizen-2.19.0-py3-none-any.whl", hash = "sha256:4386b1c753a519102657ea1ccfc175884c7de85e9a9ca4982adb85ee32bf0f61"},
+    {file = "commitizen-2.19.0.tar.gz", hash = "sha256:cf5b8ad49624847e90e390b8604d439a27c84bff5a70aaf6a0da6dc35addbfc1"},
+]
+commitizen-emoji = [
+    {file = "commitizen_emoji-0.1.5.tar.gz", hash = "sha256:ab44f8444151e2ec5ca2bb6a69aa5c6b2542a75330fbc751b3b9feba6a8beeaa"},
 ]
 commonmark = [
     {file = "commonmark-0.9.1-py2.py3-none-any.whl", hash = "sha256:da2f38c92590f83de410ba1a3cbceafbc74fee9def35f9251ba9a971d6d66fd9"},
@@ -1633,8 +1651,8 @@ entrypoints = [
     {file = "entrypoints-0.3.tar.gz", hash = "sha256:c70dd71abe5a8c85e55e12c19bd91ccfeec11a6e99044204511f9ed547d48451"},
 ]
 filelock = [
-    {file = "filelock-3.0.12-py3-none-any.whl", hash = "sha256:929b7d63ec5b7d6b71b0fa5ac14e030b3f70b75747cef1b10da9b879fef15836"},
-    {file = "filelock-3.0.12.tar.gz", hash = "sha256:18d82244ee114f543149c66a6e0c14e9c4f8a1044b5cdaadd0f82159d6a6ff59"},
+    {file = "filelock-3.1.0-py2.py3-none-any.whl", hash = "sha256:d9e9c7d8191e915339843c81c90d3e44f7c84e5fb03bdc6b1b4d019025cf953b"},
+    {file = "filelock-3.1.0.tar.gz", hash = "sha256:78925788ce8c8945fac28a68c1d05cf33a6a6c4fba14fe02835122c53268ceef"},
 ]
 future = [
     {file = "future-0.18.2.tar.gz", hash = "sha256:b1bead90b70cf6ec3f0710ae53a525360fa360d306a86583adc6bf83a4db537d"},
