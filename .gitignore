@@ -1,0 +1,14 @@
+# VS Code workspace file
+/*.code-workspace
+
+# . files and . folders
+.*
+!/.gitignore
+!/.pre-commit-config.yaml
+!/.github
+
+# __ folders
+__*/
+
+# .py files in the root directory
+/*.py
