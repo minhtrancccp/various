@@ -9,7 +9,6 @@
 [![Made with Python](https://img.shields.io/badge/Made%20with-Python-1f425f?logo=Python)](https://www.python.org/)
 [![Pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 
-
 A repo where I experiment and share my coding ideas, feel free to contribute to it.
 
 ## Installation
