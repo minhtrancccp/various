@@ -1,13 +1,13 @@
 # miscellaneous-python
 
-![Maintenance](https://img.shields.io/maintenance/yes/2021)
+[![BCH compliance](https://bettercodehub.com/edge/badge/minhtrancccp/miscellaneous-python?branch=master)](https://bettercodehub.com/)
+
+[![Bear-ified](https://raw.githubusercontent.com/beartype/beartype-assets/main/badge/bear-ified.svg)](https://beartype.rtfd.io)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
 [![Made with Jupyter](https://img.shields.io/badge/Made%20with-Jupyter-orange?logo=Jupyter)](https://jupyter.org/try)
-[![bear-ified](https://raw.githubusercontent.com/beartype/beartype-assets/main/badge/bear-ified.svg)](https://beartype.rtfd.io)
-[![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f?logo=Python)](https://www.python.org/)
-[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
-
+[![Made with Python](https://img.shields.io/badge/Made%20with-Python-1f425f?logo=Python)](https://www.python.org/)
+[![Pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 
 A repo where I experiment and share my coding ideas, feel free to contribute to it.
 
@@ -39,6 +39,7 @@ this [Read the Doc site](https://miscellaneous-python.readthedocs.io/)
 ## Contributing
 
 ![GitHub contributors](https://img.shields.io/github/contributors/minhtrancccp/miscellaneous-python?logo=github)
+![Maintenance](https://img.shields.io/maintenance/yes/2021)
 [![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/minhtrancccp/miscellaneous-python.svg)](http://isitmaintained.com/project/minhtrancccp/miscellaneous-python "Average time to resolve an issue")
 [![Percentage of issues still open](http://isitmaintained.com/badge/open/minhtrancccp/miscellaneous-python.svg)](http://isitmaintained.com/project/minhtrancccp/miscellaneous-python "Percentage of issues still open")
 
