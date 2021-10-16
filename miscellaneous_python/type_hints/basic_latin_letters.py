@@ -16,7 +16,7 @@ from beartype.vale import Is
 
 LETTER_PATTERN: re.Pattern[str] = re.compile(r"[a-zA-Z]")
 STRING_PATTERN: regex.Pattern[str] = regex.compile(
-    r"^[\p{BasicLatin}||\P{Alphabetic}]+$"
+    r"[\p{BasicLatin}||\P{Alphabetic}]+$"
 )
 
 
@@ -30,7 +30,9 @@ ValidatedStringType: type[str] = Annotated[str, Is[string_validator]]
 
 @beartype
 def latin_filter(string: ValidatedStringType, lowercase: bool = True) -> Iterator[str]:
+    if lowercase:
+        string = string.lower()
+
     found_letter: re.Match[str]
     for found_letter in LETTER_PATTERN.finditer(string):
-        matched_string: str = found_letter.group()
-        yield matched_string.lower() if lowercase and not matched_string.islower() else matched_string
+        yield re.Match.group(found_letter)
