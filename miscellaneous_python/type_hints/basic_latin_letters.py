@@ -14,7 +14,7 @@ from beartype import beartype
 from beartype.vale import Is
 
 LETTER_PATTERN: re.Pattern[str] = re.compile(r"[a-zA-Z]")
-STRING_PATTERN: regex.Pattern[str] = regex.compile(r"[\p{ASCII}||\P{Letter}]+")
+STRING_PATTERN: regex.Pattern[str] = regex.compile(r"[\p{BasicLatin}||\P{Alphabetic}]+")
 
 
 @beartype
