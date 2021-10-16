@@ -20,7 +20,6 @@ from miscellaneous_python.type_hints.basic_latin_letters import (
 LETTER_CATEGORY: str = "L"
 UPPER_A_CODEPOINT: int = 41
 LOWER_Z_CODEPOINT: int = 122
-MARK_CATEGORY: str = "M"
 
 
 @composite
@@ -40,7 +39,7 @@ def string_generator(
         )
     )
     non_letter_string: str = draw(
-        text(characters(blacklist_categories=(LETTER_CATEGORY, MARK_CATEGORY)))
+        text(characters(blacklist_categories=LETTER_CATEGORY))
     )
 
     result: str = latin_letter_string + non_letter_string
@@ -49,7 +48,7 @@ def string_generator(
         non_latin_string: str = draw(
             text(
                 characters(
-                    whitelist_categories=(LETTER_CATEGORY, MARK_CATEGORY),
+                    whitelist_categories=LETTER_CATEGORY,
                     min_codepoint=LOWER_Z_CODEPOINT + 1,
                 ),
                 min_size=1,
@@ -71,7 +70,7 @@ def test_invalid_string(string: str) -> None:
 
 
 @given(data())
-def test_latin_filter(data_strategy: DataObject):
+def test_latin_filter(data_strategy: DataObject) -> None:
     latin_count: int = data_strategy.draw(integers(min_value=1))
     drawn_string: str = data_strategy.draw(
         string_generator(latin_count_min=latin_count)
