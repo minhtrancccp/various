@@ -1,24 +1,25 @@
-from collections import Callable
 from random import Random
-from typing import TypeVar
 
 from hypothesis import given, strategies
 
 from auxiliary.latin_string import letter_filter, string_validator
 from tests import shared_strategies
 
-T = TypeVar("T")
+# Avg number of letters in an English word * upper avg word count in an English sentence
+max_letter_count: int = 5 * 20
 
 
 @strategies.composite
 def string_generator(
-    draw: Callable[[strategies.SearchStrategy[T]], T],
+    draw: shared_strategies.Draw,
     latin_only: bool = True,
     latin_count_min: int = 0,
 ) -> str:
     latin_letter_string: str = draw(
         strategies.text(
-            shared_strategies.latin_letter_strategy, min_size=latin_count_min
+            shared_strategies.latin_letter_strategy,
+            min_size=latin_count_min,
+            max_size=max_letter_count,
         )
     )
     non_letter_string: str = draw(
@@ -39,7 +40,7 @@ def string_generator(
         )
         result += non_latin_string
 
-    sampler: Random = draw(strategies.randoms(note_method_calls=True))
+    sampler: Random = draw(strategies.randoms())
     return "".join(sampler.sample(result, k=len(result)))
 
 
@@ -55,7 +56,9 @@ def test_invalid_string(string: str) -> None:
 
 @given(strategies.data())
 def test_latin_filter(data_strategy: strategies.DataObject) -> None:
-    latin_count: int = data_strategy.draw(strategies.integers(min_value=1))
+    latin_count: int = data_strategy.draw(
+        strategies.integers(min_value=1, max_value=max_letter_count)
+    )
     drawn_string: str = data_strategy.draw(
         string_generator(latin_count_min=latin_count)
     )
