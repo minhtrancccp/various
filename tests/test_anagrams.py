@@ -1,49 +1,33 @@
 from collections.abc import Collection
+from random import Random
 
 from hypothesis import example, given
 from hypothesis.strategies import booleans, composite, integers, randoms, text
+from pytest import mark
 
 from miscellaneous_python.anagrams import anagram_checker
-from tests.shared_strategies import Draw, latin_letter_strategy
+from tests.shared_strategies import Draw, latin_letter_strategy, non_letter_strategy
 
 Strings: type[Collection] = Collection[str]
-CharGroup: type[list] = list[str]
 
 
 @composite
-def strings_generator(draw: Draw, inverse_test: bool = False) -> Strings:
-    letter_only_groups: list[CharGroup] = []
+def strings_generator(draw: Draw) -> Strings:
+    result: list[str] = []
+    base_phrase: str = draw(text(latin_letter_strategy, min_size=2))
+    randomizer: Random = draw(randoms())
 
-    def new_group() -> CharGroup:
-        generated_group: CharGroup = sorted(
-            draw(text(latin_letter_strategy, min_size=1)).lower()
-        )
-        return (
-            generated_group
-            if generated_group not in letter_only_groups
-            else new_group()
-        )
+    def swap_case(letter: str) -> str:
+        return letter.swapcase() if draw(booleans()) else letter
 
     most_anagrams_possible: int = 11
     word_count: int
     for word_count in range(draw(integers(2, most_anagrams_possible))):
-        letter_only_groups.append(
-            new_group() if inverse_test or not word_count else letter_only_groups[0]
-        )
-
-    result: list[str] = []
-
-    group: CharGroup
-    for group in letter_only_groups:
-        index: int
-        letter: str
-        for index, letter in enumerate(group):
-            if draw(booleans()):
-                group[index] = letter.swapcase()
-
-        # TODO: why non_letter_strategy includes chars like "Ι" (U+03B9)
-        # group.extend(draw(text(non_letter_strategy)))
-        draw(randoms()).shuffle(group)
+        group: list[str] = [
+            *map(swap_case, base_phrase),
+            *draw(text(non_letter_strategy)),
+        ]
+        randomizer.shuffle(group)
 
         result.append("".join(group))
 
@@ -59,10 +43,9 @@ def test_are_anagrams(are_anagrams_params: Strings):
     assert anagram_checker(are_anagrams_params)
 
 
-# TODO: RecursionError raises
-@given(strings_generator(True))
-@example(("where", "when"))
-@example(("nag", "Gram"))
-@example(("liter", "litre", "tiler", "peril"))
+@mark.parametrize(
+    "not_anagrams_params",
+    (("where", "when"), ("nag", "Gram"), ("liter", "litre", "tiler", "peril")),
+)
 def test_not_anagrams(not_anagrams_params: Strings):
     assert not anagram_checker(not_anagrams_params)
