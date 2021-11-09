@@ -10,5 +10,6 @@
 # __ folders
 __*/
 
-# .py files in the root directory
+# .py & .ipynb files in the root directory
 /*.py
+/*.ipynb
