@@ -2,8 +2,8 @@ from random import Random
 
 from hypothesis import given, strategies
 
-from auxiliary.latin_string import letter_filter, string_validator
 from tests import shared_strategies
+from type_hints.latin_string import letter_filter, string_validator
 
 # Avg number of letters in an English word * upper avg word count in an English sentence
 max_letter_count: int = 5 * 20

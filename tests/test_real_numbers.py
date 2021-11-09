@@ -1,11 +1,10 @@
-from numbers import Real
-
 from hypothesis import given, strategies
+from numerary.types import RealLike
 
-from auxiliary.real_numbers import is_not_negative, is_positive_real
+from type_hints.real_numbers import is_not_negative, is_positive_real
 
 
-def is_zero(value: Real) -> bool:
+def is_zero(value: RealLike) -> bool:
     return is_not_negative(value) and not is_positive_real(value)
 
 
@@ -17,7 +16,7 @@ def is_zero(value: Real) -> bool:
         strategies.integers(min_value=0),
     )
 )
-def test_positive_numbers(value: Real) -> None:
+def test_positive_numbers(value: RealLike) -> None:
     assert (
         is_not_negative(value) and is_positive_real(value) if value else is_zero(value)
     )
@@ -31,7 +30,7 @@ def test_positive_numbers(value: Real) -> None:
         strategies.integers(max_value=0),
     )
 )
-def test_negative_floats(value: Real) -> None:
+def test_negative_floats(value: RealLike) -> None:
     assert (
         not (is_not_negative(value) or is_positive_real(value))
         if value
