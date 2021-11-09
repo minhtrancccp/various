@@ -15,7 +15,7 @@ from beartype.vale import Is
 from more_itertools import all_equal
 from sympy import sieve
 
-from auxiliary.latin_string import LatinString, letter_filter
+from type_hints.latin_string import LatinString, letter_filter
 
 LETTER_TO_PRIME: dict[str, int] = dict(zip(ascii_lowercase, sieve))
 
