@@ -1,11 +1,8 @@
-from numbers import Real
-from typing import Optional
-
 from hypothesis import example, given
 from hypothesis.strategies import SearchStrategy, floats
 
-from auxiliary.real_numbers import is_positive_real
 from miscellaneous_python.climbing_snail import Snail
+from type_hints.real_numbers import PositiveReal, is_positive_real
 
 positive_real_strategies: SearchStrategy[float] = floats(
     min_value=0,
@@ -25,15 +22,17 @@ positive_real_strategies: SearchStrategy[float] = floats(
 @example(69, 3, 8)
 @example(81, 14, 14)
 @given(positive_real_strategies, positive_real_strategies, positive_real_strategies)
-def test_timer(forward: Real, backward: Real, distance: Real) -> None:
+def test_timer(
+    forward: PositiveReal, backward: PositiveReal, distance: PositiveReal
+) -> None:
     snail: Snail = Snail(forward, backward)
 
-    result: Optional[Real] = snail.timer(distance)
+    result: PositiveReal = snail.timer(distance)
     if distance <= snail.forward:
         assert result == 1
 
     elif not snail.normal_snail():
-        assert result is None
+        assert result == 0
 
     else:
         assert is_positive_real(result)
