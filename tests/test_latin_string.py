@@ -45,17 +45,17 @@ def string_generator(
 
 
 @given(string_generator(latin_count_min=1))
-def test_valid_string(string: str) -> None:
+def test_valid_string(string: str) :
     assert string_validator(string)
 
 
 @given(string_generator(latin_only=False))
-def test_invalid_string(string: str) -> None:
+def test_invalid_string(string: str) :
     assert not string_validator(string)
 
 
 @given(strategies.data())
-def test_latin_filter(data_strategy: strategies.DataObject) -> None:
+def test_latin_filter(data_strategy: strategies.DataObject) :
     latin_count: int = data_strategy.draw(
         strategies.integers(min_value=1, max_value=max_letter_count)
     )
