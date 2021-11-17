@@ -51,7 +51,7 @@ profile = "black"
 multi_line_output = 3
 
 [tool.pytest.ini_options]
-addopts = "-v --no-header --cov=miscellaneous_python --cov=type_hints --durations=0 --ignore=under_construction"
+addopts = "-v --no-header --cov=miscellaneous_python --cov=roman_numeral --cov=type_hints --durations=0 --ignore=under_construction"
 filterwarnings = ["ignore::DeprecationWarning"]
 
 [build-system]
