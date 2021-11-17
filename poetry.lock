@@ -276,7 +276,7 @@ python-versions = ">=2.7"
 
 [[package]]
 name = "filelock"
-version = "3.3.2"
+version = "3.4.0"
 description = "A platform independent file lock."
 category = "dev"
 optional = false
@@ -307,7 +307,7 @@ type = "url"
 url = "https://github.com/aleaxit/gmpy/releases/download/gmpy2-2.1.0rc1/gmpy2-2.1.0rc1-cp39-cp39-win_amd64.whl"
 [[package]]
 name = "hypothesis"
-version = "6.24.2"
+version = "6.24.5"
 description = "A library for property-based testing"
 category = "dev"
 optional = false
@@ -339,7 +339,7 @@ zoneinfo = ["importlib-resources (>=3.3.0)", "backports.zoneinfo (>=0.2.1)", "tz
 
 [[package]]
 name = "identify"
-version = "2.3.5"
+version = "2.3.6"
 description = "File identification library for Python"
 category = "dev"
 optional = false
@@ -468,7 +468,7 @@ plugins = ["setuptools"]
 
 [[package]]
 name = "jedi"
-version = "0.18.0"
+version = "0.18.1"
 description = "An autocompletion tool for Python that can be used for text editors."
 category = "dev"
 optional = false
@@ -479,7 +479,7 @@ parso = ">=0.8.0,<0.9.0"
 
 [package.extras]
 qa = ["flake8 (==3.8.3)", "mypy (==0.782)"]
-testing = ["Django (<3.1)", "colorama", "docopt", "pytest (<6.0.0)"]
+testing = ["Django (<3.1)", "colorama", "docopt", "pytest (<7.0.0)"]
 
 [[package]]
 name = "jinja2"
@@ -783,7 +783,7 @@ python-versions = "*"
 
 [[package]]
 name = "notebook"
-version = "6.4.5"
+version = "6.4.6"
 description = "A web-based notebook environment for interactive computing"
 category = "dev"
 optional = false
@@ -798,9 +798,10 @@ jupyter-client = ">=5.3.4"
 jupyter-core = ">=4.6.1"
 nbconvert = "*"
 nbformat = "*"
+nest-asyncio = ">=1.5"
 prometheus-client = "*"
 pyzmq = ">=17"
-Send2Trash = ">=1.5.0"
+Send2Trash = ">=1.8.0"
 terminado = ">=0.8.3"
 tornado = ">=6.1"
 traitlets = ">=4.2.1"
@@ -1072,7 +1073,7 @@ python-versions = "*"
 
 [[package]]
 name = "pywinpty"
-version = "1.1.5"
+version = "1.1.6"
 description = "Pseudo terminal support for Windows from Python."
 category = "dev"
 optional = false
@@ -1176,7 +1177,7 @@ typing-extensions = ">=3.7,<4.0"
 
 [[package]]
 name = "rich"
-version = "10.13.0"
+version = "10.14.0"
 description = "Render rich text, tables, progress bars, syntax highlighting, markdown and more to the terminal"
 category = "dev"
 optional = false
@@ -1618,20 +1619,20 @@ entrypoints = [
     {file = "entrypoints-0.3.tar.gz", hash = "sha256:c70dd71abe5a8c85e55e12c19bd91ccfeec11a6e99044204511f9ed547d48451"},
 ]
 filelock = [
-    {file = "filelock-3.3.2-py3-none-any.whl", hash = "sha256:bb2a1c717df74c48a2d00ed625e5a66f8572a3a30baacb7657add1d7bac4097b"},
-    {file = "filelock-3.3.2.tar.gz", hash = "sha256:7afc856f74fa7006a289fd10fa840e1eebd8bbff6bffb69c26c54a0512ea8cf8"},
+    {file = "filelock-3.4.0-py3-none-any.whl", hash = "sha256:2e139a228bcf56dd8b2274a65174d005c4a6b68540ee0bdbb92c76f43f29f7e8"},
+    {file = "filelock-3.4.0.tar.gz", hash = "sha256:93d512b32a23baf4cac44ffd72ccf70732aeff7b8050fcaf6d3ec406d954baf4"},
 ]
 future = [
     {file = "future-0.18.2.tar.gz", hash = "sha256:b1bead90b70cf6ec3f0710ae53a525360fa360d306a86583adc6bf83a4db537d"},
 ]
 gmpy2 = []
 hypothesis = [
-    {file = "hypothesis-6.24.2-py3-none-any.whl", hash = "sha256:f6b7b3b693fe00121a6c9edc04bedf6c48a75ea5ab02251e6023c4357a5369a5"},
-    {file = "hypothesis-6.24.2.tar.gz", hash = "sha256:4030f88ae0a8d3339a41dd7589c78d3ba0a3a270f729c12aceddaea7c60b224b"},
+    {file = "hypothesis-6.24.5-py3-none-any.whl", hash = "sha256:8f7318839b64bae1410704933fe01f3db5f80f20f2ba8d4ea3520443ae3a001d"},
+    {file = "hypothesis-6.24.5.tar.gz", hash = "sha256:f1627022f75306c653115fbd169ba6a4322804f60533a7b46625fd0eecba43d5"},
 ]
 identify = [
-    {file = "identify-2.3.5-py2.py3-none-any.whl", hash = "sha256:ba945bddb4322394afcf3f703fa68eda08a6acc0f99d9573eb2be940aa7b9bba"},
-    {file = "identify-2.3.5.tar.gz", hash = "sha256:6f0368ba0f21c199645a331beb7425d5374376e71bc149e9cb55e45cb45f832d"},
+    {file = "identify-2.3.6-py2.py3-none-any.whl", hash = "sha256:8cb609a671d2f861ae7fe583711a43fd2faab0c892f39cbc4568b0c51b354238"},
+    {file = "identify-2.3.6.tar.gz", hash = "sha256:4f85f9bd8e6e5e2d61b2f8de5ff5313d8a1cfac4c88822d74406de45ad10bd82"},
 ]
 importlib-metadata = [
     {file = "importlib_metadata-4.8.2-py3-none-any.whl", hash = "sha256:53ccfd5c134223e497627b9815d5030edf77d2ed573922f7a0b8f8bb81a1c100"},
@@ -1662,8 +1663,8 @@ isort = [
     {file = "isort-5.10.1.tar.gz", hash = "sha256:e8443a5e7a020e9d7f97f1d7d9cd17c88bcb3bc7e218bf9cf5095fe550be2951"},
 ]
 jedi = [
-    {file = "jedi-0.18.0-py2.py3-none-any.whl", hash = "sha256:18456d83f65f400ab0c2d3319e48520420ef43b23a086fdc05dff34132f0fb93"},
-    {file = "jedi-0.18.0.tar.gz", hash = "sha256:92550a404bad8afed881a137ec9a461fed49eca661414be45059329614ed0707"},
+    {file = "jedi-0.18.1-py2.py3-none-any.whl", hash = "sha256:637c9635fcf47945ceb91cd7f320234a7be540ded6f3e99a50cb6febdfd1ba8d"},
+    {file = "jedi-0.18.1.tar.gz", hash = "sha256:74137626a64a99c8eb6ae5832d99b3bdd7d29a3850fe2aa80a4126b2a7d949ab"},
 ]
 jinja2 = [
     {file = "Jinja2-3.0.3-py3-none-any.whl", hash = "sha256:077ce6014f7b40d03b47d1f1ca4b0fc8328a692bd284016f806ed0eaca390ad8"},
@@ -1807,8 +1808,8 @@ nodeenv = [
     {file = "nodeenv-1.6.0.tar.gz", hash = "sha256:3ef13ff90291ba2a4a7a4ff9a979b63ffdd00a464dbe04acf0ea6471517a4c2b"},
 ]
 notebook = [
-    {file = "notebook-6.4.5-py3-none-any.whl", hash = "sha256:f7b4362698fed34f44038de0517b2e5136c1e7c379797198c1736121d3d597bd"},
-    {file = "notebook-6.4.5.tar.gz", hash = "sha256:872e20da9ae518bbcac3e4e0092d5bd35454e847dedb8cb9739e9f3b68406be0"},
+    {file = "notebook-6.4.6-py3-none-any.whl", hash = "sha256:5cad068fa82cd4fb98d341c052100ed50cd69fbfb4118cb9b8ab5a346ef27551"},
+    {file = "notebook-6.4.6.tar.gz", hash = "sha256:7bcdf79bd1cda534735bd9830d2cbedab4ee34d8fe1df6e7b946b3aab0902ba3"},
 ]
 numerary = [
     {file = "numerary-0.0.5-py3-none-any.whl", hash = "sha256:bcf16a8f109099283ef382f637675dab084d744fed80cdf104a8d3e1a4fc74d6"},
@@ -1934,12 +1935,12 @@ pywin32 = [
     {file = "pywin32-302-cp39-cp39-win_amd64.whl", hash = "sha256:af5aea18167a31efcacc9f98a2ca932c6b6a6d91ebe31f007509e293dea12580"},
 ]
 pywinpty = [
-    {file = "pywinpty-1.1.5-cp310-none-win_amd64.whl", hash = "sha256:59e38276f732121b7b708b488055132c695ab7f8790b6ebee9b5b277e30c40e1"},
-    {file = "pywinpty-1.1.5-cp36-none-win_amd64.whl", hash = "sha256:0f73bea7f4ecc4711d3706bb0adea0b426c384ff38b619e169d58e20bc307eb0"},
-    {file = "pywinpty-1.1.5-cp37-none-win_amd64.whl", hash = "sha256:4cefeef61ab82e9e2bfe228d83a49117e33899931766dd18d576ea5c9187c1e0"},
-    {file = "pywinpty-1.1.5-cp38-none-win_amd64.whl", hash = "sha256:44c78a9a74f1b6bff957f8b0acad0525f48f716ac61fd9d39e1eb6f87f1a46a0"},
-    {file = "pywinpty-1.1.5-cp39-none-win_amd64.whl", hash = "sha256:ad12ddf276446e0440a760b7c0ba128d39602bc8e6641e0ef8447f1a466a8346"},
-    {file = "pywinpty-1.1.5.tar.gz", hash = "sha256:92125f0f8e4e64bb5f3bf270a182c9206dc1765542c59bc07441908a9db17504"},
+    {file = "pywinpty-1.1.6-cp310-none-win_amd64.whl", hash = "sha256:5f526f21b569b5610a61e3b6126259c76da979399598e5154498582df3736ade"},
+    {file = "pywinpty-1.1.6-cp36-none-win_amd64.whl", hash = "sha256:7576e14f42b31fa98b62d24ded79754d2ea4625570c016b38eb347ce158a30f2"},
+    {file = "pywinpty-1.1.6-cp37-none-win_amd64.whl", hash = "sha256:979ffdb9bdbe23db3f46fc7285fd6dbb86b80c12325a50582b211b3894072354"},
+    {file = "pywinpty-1.1.6-cp38-none-win_amd64.whl", hash = "sha256:2308b1fc77545427610a705799d4ead5e7f00874af3fb148a03e202437456a7e"},
+    {file = "pywinpty-1.1.6-cp39-none-win_amd64.whl", hash = "sha256:c703bf569a98ab7844b9daf37e88ab86f31862754ef6910a8b3824993a525c72"},
+    {file = "pywinpty-1.1.6.tar.gz", hash = "sha256:8808f07350c709119cc4464144d6e749637f98e15acc1e5d3c37db1953d2eebc"},
 ]
 pyyaml = [
     {file = "PyYAML-6.0-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:d4db7c7aef085872ef65a8fd7d6d09a14ae91f691dec3e87ee5ee0539d516f53"},
@@ -2087,8 +2088,8 @@ returns = [
     {file = "returns-0.17.0.tar.gz", hash = "sha256:8cb7980454bbb2adfd43c44148d902fbd1a0f7288a797eaa6fad1fef7d5ec06c"},
 ]
 rich = [
-    {file = "rich-10.13.0-py3-none-any.whl", hash = "sha256:96d15285b64dbf8154e0717298d2fdfdbbe03da26a392632c23820068f06c3b3"},
-    {file = "rich-10.13.0.tar.gz", hash = "sha256:d80fc76f34d819c481a48f73ec9ac396bed3bd6a16ecd57f9e0654cd89a8fb56"},
+    {file = "rich-10.14.0-py3-none-any.whl", hash = "sha256:ab9cbfd7a3802d8c6f0fa91e974630e2a69447972dcbb9dfe9b01016dd95e38e"},
+    {file = "rich-10.14.0.tar.gz", hash = "sha256:8bfe4546d56b4131298d3a9e571a0742de342f1593770bd0d4707299f772a0af"},
 ]
 send2trash = [
     {file = "Send2Trash-1.8.0-py3-none-any.whl", hash = "sha256:f20eaadfdb517eaca5ce077640cb261c7d2698385a6a0f072a4a5447fd49fa08"},
