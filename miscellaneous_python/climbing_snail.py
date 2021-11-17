@@ -2,7 +2,6 @@
 References:
     https://codegolf.stackexchange.com/questions/130290/the-snail-in-the-well
 """
-from math import ceil
 
 from beartype import beartype
 
@@ -14,7 +13,8 @@ class Snail:
     A class for emulating a wall-climbing snail
     """
 
-    def __init__(self, forward: PositiveReal, backward: PositiveReal) -> None:
+    @beartype
+    def __init__(self, forward: PositiveReal, backward: PositiveReal):
         self.forward: PositiveReal = forward
         self.backward: PositiveReal = backward
 
@@ -22,6 +22,14 @@ class Snail:
     def normal_snail(self) -> bool:
         """
         Return a boolean indicating if the snail is normal, i.e. its forward speed is greater than its backward speed
+
+        Examples
+        --------
+        >>> Snail(1, 2).normal_snail()
+        False
+
+        >>> Snail(2, 1).normal_snail()
+        True
         """
 
         return self.forward > self.backward
@@ -31,14 +39,34 @@ class Snail:
         """
         Return the time the snail takes to travel a distance
 
-        If the travel distance isn't greater than the snail's forward speed and the snail is not normal, 0 is returned.
+        The result is rounded up to the nearest days.
+        If the travel distance is greater than the snail's forward speed but the snail isn't normal, 0 is returned.
         To check if the snail is normal, use the Snail.normal_snail method.
+
+        Raises
+        ------
+        BeartypeCallHintPepParamException
+            If the given distance is not a positive real number
+
+        Examples
+        --------
+        >>> Snail(1, 2).timer(1)
+        1
+
+        >>> Snail(1, 2).timer(2)
+        0
+
+        >>> Snail(2, 1).timer(3)
+        2
         """
+
+        from math import ceil
 
         if distance <= self.forward:
             return 1
 
-        if not self.normal_snail():
+        elif not self.normal_snail():
             return 0
 
-        return ceil((distance - self.forward) / (self.forward - self.backward)) + 1
+        else:
+            return ceil((distance - self.forward) / (self.forward - self.backward)) + 1
