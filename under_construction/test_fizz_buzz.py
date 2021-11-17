@@ -2,7 +2,7 @@ from math import factorial
 
 from pytest import fixture, mark
 
-from miscellaneous_python.fizz_buzz import FizzBuzz
+from under_construction.fizz_buzz import FizzBuzz
 
 
 @fixture

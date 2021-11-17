@@ -3,7 +3,7 @@ from string import printable
 from hypothesis import given
 from hypothesis.strategies import text
 
-from miscellaneous_python.vigenere_cipher import Modes, vigenere_function
+from under_construction.vigenere_cipher import Modes, vigenere_function
 
 
 @given(text(printable), text())
