@@ -4,13 +4,11 @@ References:
 """
 
 from collections.abc import Collection
-from math import prod
 from string import ascii_lowercase
 from typing import Annotated
 
 from beartype import beartype
 from beartype.vale import Is
-from more_itertools import all_equal
 from sympy import sieve
 
 from type_hints.latin_string import LatinString, letter_filter
@@ -46,6 +44,8 @@ def string_to_product(string: LatinString) -> int:
     871933
     """
 
+    from math import prod
+
     return prod(map(LETTER_TO_PRIME.get, letter_filter(string)))
 
 
@@ -69,5 +69,7 @@ def anagram_checker(
     >>> anagram_checker(['abc', 'cba', 'xyz'])
     False
     """
+
+    from more_itertools import all_equal
 
     return all_equal(map(string_to_product, strings))
