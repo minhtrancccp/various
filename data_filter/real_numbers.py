@@ -8,7 +8,18 @@ from numerary.types import IntegralLikeSCU, RealLikeSCU
 @beartype
 def not_negative(value: RealLikeSCU) -> bool:
     """
-    Return a boolean indicating whether the given real number is not negative.
+    Return a boolean indicating whether the given real number is not negative
+
+    Examples
+    --------
+    >>> not_negative(0.0)
+    True
+
+    >>> not_negative(-1.0)
+    False
+
+    >>> not_negative(1.0)
+    True
     """
 
     return value >= 0
@@ -17,7 +28,18 @@ def not_negative(value: RealLikeSCU) -> bool:
 @beartype
 def positive_real(value: RealLikeSCU) -> bool:
     """
-    Return a boolean indicating whether the given real number is positive.
+    Return a boolean indicating whether the given real number is positive
+
+    Examples
+    --------
+    >>> positive_real(0.0)
+    False
+
+    >>> positive_real(-1.0)
+    False
+
+    >>> positive_real(1.0)
+    True
     """
 
     return value > 0
