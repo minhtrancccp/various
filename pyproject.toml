@@ -17,7 +17,7 @@ gmpy2 = [
 beartype = { allow-prereleases = true, version = "^0.9.0" }
 codetiming = { allow-prereleases = true, version = "^1.3.0" }
 more-itertools = { allow-prereleases = true, version = "^8.8.0" }
-numerary = { allow-prereleases = true, version = "^0.0.5" }
+numerary = { allow-prereleases = true, version = "^0.1.1" }
 prettytable = { allow-prereleases = true, version = "^2.1.0" }
 regex = { allow-prereleases = true, version = "^2021.9.24" }
 returns = { allow-prereleases = true, version = "^0.17.0" }
@@ -33,7 +33,6 @@ jupyter = { allow-prereleases = true, version = "^1.0.0" }
 nbqa = { allow-prereleases = true, version = "^1.1.0" }
 pre-commit = { allow-prereleases = true, version = "^2.15.0" }
 pytest = { allow-prereleases = true, version = "^6.2.4" }
-pytest-cov = { allow-prereleases = true, version = "^3.0.0" }
 pytest-randomly = { allow-prereleases = true, version = "^3.10.1" }
 radon = { allow-prereleases = true, version = "^5.1.0" }
 
@@ -41,18 +40,25 @@ radon = { allow-prereleases = true, version = "^5.1.0" }
 version = "0.3.0"
 version_files = ["pyproject.toml"]
 
+[tool.coverage.run]
+branch = true
+command_line = "-m pytest tests"
+dynamic_context = "test_function"
+
 [tool.coverage.report]
-precision = 2
 show_missing = true
-sort = "-cover"
+skip_empty = true
+sort = "cover"
+
+[tool.coverage.html]
+show_contexts = true
 
 [tool.isort]
 profile = "black"
 multi_line_output = 3
 
 [tool.pytest.ini_options]
-addopts = "-v --no-header --cov=miscellaneous_python --cov=roman_numeral --cov=type_hints --durations=0 --ignore=under_construction"
-filterwarnings = ["ignore::DeprecationWarning"]
+addopts = "--no-header"
 
 [build-system]
 requires = ["poetry-core"]

@@ -813,8 +813,8 @@ test = ["pytest", "coverage", "requests", "nbval", "selenium", "pytest-cov", "re
 
 [[package]]
 name = "numerary"
-version = "0.0.5"
-description = "Python hacks for type checking numbers"
+version = "0.1.1"
+description = "Python hacks for type-checking numbers"
 category = "main"
 optional = false
 python-versions = ">=3.7"
@@ -1024,21 +1024,6 @@ toml = "*"
 
 [package.extras]
 testing = ["argcomplete", "hypothesis (>=3.56)", "mock", "nose", "requests", "xmlschema"]
-
-[[package]]
-name = "pytest-cov"
-version = "3.0.0"
-description = "Pytest plugin for measuring coverage."
-category = "dev"
-optional = false
-python-versions = ">=3.6"
-
-[package.dependencies]
-coverage = {version = ">=5.2.1", extras = ["toml"]}
-pytest = ">=4.6"
-
-[package.extras]
-testing = ["fields", "hunter", "process-tests", "six", "pytest-xdist", "virtualenv"]
 
 [[package]]
 name = "pytest-randomly"
@@ -1398,7 +1383,7 @@ testing = ["pytest (>=4.6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytes
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.9,<3.11"
-content-hash = "bfd3741f5214f651aebd5a9bc9c17eff708d7f6afb7e7c87151c118672a22720"
+content-hash = "e5a461101c771fc673e33587bee1c8be4c19f9b127b6a4185b53fc326d210fc6"
 
 [metadata.files]
 appnope = [
@@ -1812,8 +1797,7 @@ notebook = [
     {file = "notebook-6.4.6.tar.gz", hash = "sha256:7bcdf79bd1cda534735bd9830d2cbedab4ee34d8fe1df6e7b946b3aab0902ba3"},
 ]
 numerary = [
-    {file = "numerary-0.0.5-py3-none-any.whl", hash = "sha256:bcf16a8f109099283ef382f637675dab084d744fed80cdf104a8d3e1a4fc74d6"},
-    {file = "numerary-0.0.5.tar.gz", hash = "sha256:6d96096924e8d3ebf84b6921ba0e4f430512195775266bbae1cc7711d0fb748e"},
+    {file = "numerary-0.1.1-py3-none-any.whl", hash = "sha256:fa3d7fdcddb6ac0da4c155df496ea33b0be9e02bb219496d5ce3ee3d4dc28092"},
 ]
 packaging = [
     {file = "packaging-21.2-py3-none-any.whl", hash = "sha256:14317396d1e8cdb122989b916fa2c7e9ca8e2be9e8060a6eff75b6b7b4d8a7e0"},
@@ -1909,10 +1893,6 @@ pyrsistent = [
 pytest = [
     {file = "pytest-6.2.5-py3-none-any.whl", hash = "sha256:7310f8d27bc79ced999e760ca304d69f6ba6c6649c0b60fb0e04a4a77cacc134"},
     {file = "pytest-6.2.5.tar.gz", hash = "sha256:131b36680866a76e6781d13f101efb86cf674ebb9762eb70d3082b6f29889e89"},
-]
-pytest-cov = [
-    {file = "pytest-cov-3.0.0.tar.gz", hash = "sha256:e7f0f5b1617d2210a2cabc266dfe2f4c75a8d32fb89eafb7ad9d06f6d076d470"},
-    {file = "pytest_cov-3.0.0-py3-none-any.whl", hash = "sha256:578d5d15ac4a25e5f961c938b85a05b09fdaae9deef3bb6de9a6e766622ca7a6"},
 ]
 pytest-randomly = [
     {file = "pytest-randomly-3.10.2.tar.gz", hash = "sha256:2c0a332c4b124e372e2473803bcc91ec87797664f4955afef2b844c0021662b1"},
