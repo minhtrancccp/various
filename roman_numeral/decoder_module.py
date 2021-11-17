@@ -7,9 +7,10 @@ from typing import Annotated
 
 from beartype import beartype
 from beartype.vale import Is
+from numerary.types import IntegralLikeSCU
 
+from data_filter.real_numbers import NaturalNumber, PositiveInteger
 from roman_numeral.config import ACCEPTED_ROMAN_SYMBOLS
-from type_hints.real_numbers import NaturalNumber
 
 
 @beartype
@@ -30,12 +31,12 @@ class _IndicesPair:
     """
 
     @beartype
-    def __init__(self, indices_pair: tuple[NaturalNumber, int]):
+    def __init__(self, indices_pair: tuple[NaturalNumber, IntegralLikeSCU]):
         self.first_index: NaturalNumber
-        self.second_index: int
+        self.second_index: IntegralLikeSCU
         self.first_index, self.second_index = indices_pair
 
-        self.delta_index: int = self.second_index - self.first_index
+        self.delta_index: IntegralLikeSCU = self.second_index - self.first_index
 
     @beartype
     def valid_pair(self) -> bool:
@@ -69,7 +70,7 @@ class _IndicesPair:
         )
 
     @beartype
-    def __int__(self) -> int:
+    def __int__(self) -> IntegralLikeSCU:
         """
         Return the equivalent decimal value of a pair of indices
 
@@ -83,15 +84,17 @@ class _IndicesPair:
 
         from math import prod
 
-        absolute_decimal: int = prod(map(pow, (10, 5), divmod(self.first_index, 2)))
-        subtractive_notation_used: int = (-1) ** (self.delta_index >= 1)
+        absolute_decimal: PositiveInteger = prod(
+            map(pow, (10, 5), divmod(self.first_index, 2))
+        )
+        subtractive_notation_used: IntegralLikeSCU = (-1) ** (self.delta_index >= 1)
         return absolute_decimal * subtractive_notation_used
 
 
 @beartype
 def _pair_transformation(
     indices_pair: Annotated[_IndicesPair, Is[_IndicesPair.valid_pair]]
-) -> int:
+) -> IntegralLikeSCU:
     """
     Return the decimal equivalent of the given pair of indices
 
@@ -106,7 +109,7 @@ def _pair_transformation(
 
 
 @beartype
-def decoder(roman_number: Annotated[str, Is[_valid_roman]]) -> NaturalNumber:
+def decoder(roman_number: Annotated[str, Is[_valid_roman]]) -> PositiveInteger:
     """
     Return the decimal equivalent of the given Roman numeral
 
@@ -131,7 +134,7 @@ def decoder(roman_number: Annotated[str, Is[_valid_roman]]) -> NaturalNumber:
 
     from more_itertools import padded
 
-    needed_pair_count: int = len(roman_number) + 1
+    needed_pair_count: PositiveInteger = len(roman_number) + 1
     return sum(
         _pair_transformation(_IndicesPair(indices_pair))
         for indices_pair in pairwise(

@@ -5,7 +5,7 @@ References:
 
 from beartype import beartype
 
-from type_hints.real_numbers import NaturalNumber, PositiveReal
+from data_filter.real_numbers import NaturalNumber, PositiveReal
 
 
 class Snail:

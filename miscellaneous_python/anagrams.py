@@ -11,22 +11,21 @@ from beartype import beartype
 from beartype.vale import Is
 from sympy import sieve
 
-from type_hints.latin_string import LatinString, letter_filter
-
-LETTER_TO_PRIME: dict[str, int] = dict(zip(ascii_lowercase, sieve))
+from data_filter.latin_string import LatinString, letter_filter
+from data_filter.real_numbers import PositiveInteger
 
 
 @beartype
 def _long_enough(collection: Collection) -> bool:
     """
-    Return a boolean indicating whether enough strings are given to be checked for occurrences of anagrams
+    Return a boolean indicating if enough strings, i.e. at least 2, are given to be checked for occurrences of anagrams
     """
 
     return len(collection) >= 2
 
 
 @beartype
-def string_to_product(string: LatinString) -> int:
+def string_to_product(string: LatinString) -> PositiveInteger:
     """
     Return product of primes corresponding to each letter in the given string
 
@@ -46,7 +45,8 @@ def string_to_product(string: LatinString) -> int:
 
     from math import prod
 
-    return prod(map(LETTER_TO_PRIME.get, letter_filter(string)))
+    letter_to_prime: dict[str, PositiveInteger] = dict(zip(ascii_lowercase, sieve))
+    return prod(map(letter_to_prime.get, letter_filter(string)))
 
 
 @beartype

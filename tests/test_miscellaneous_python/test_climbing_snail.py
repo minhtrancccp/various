@@ -1,8 +1,8 @@
 from hypothesis import example, given
 from hypothesis.strategies import SearchStrategy, floats
 
+from data_filter.real_numbers import PositiveReal, positive_real
 from miscellaneous_python.climbing_snail import Snail
-from type_hints.real_numbers import PositiveReal, is_positive_real
 
 # The duration between Earth's formation and its destruction is about 12.13 billion years or 4.43e12 days
 # So arguments for the Snail class should have at most 12 significant digits to be considered valid
@@ -36,4 +36,4 @@ def test_timer(forward: PositiveReal, backward: PositiveReal, distance: Positive
         assert result == 0
 
     else:
-        assert is_positive_real(result)
+        assert positive_real(result)
