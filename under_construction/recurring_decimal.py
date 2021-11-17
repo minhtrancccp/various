@@ -4,7 +4,7 @@ from math import log10
 from beartype import beartype
 from sympy import divisors, reduced_totient
 
-from type_hints.real_numbers import PositiveInteger
+from data_filter.real_numbers import PositiveInteger
 
 
 def _totient_rule(value: PositiveInteger) -> int:

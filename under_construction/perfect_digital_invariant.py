@@ -10,7 +10,7 @@ from math import log10
 
 from beartype import beartype
 
-from type_hints.real_numbers import NaturalNumber
+from data_filter.real_numbers import NaturalNumber
 
 
 @beartype

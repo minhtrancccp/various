@@ -1,11 +1,11 @@
 from hypothesis import given, strategies
 from numerary.types import RealLike
 
-from type_hints.real_numbers import is_not_negative, is_positive_real
+from data_filter.real_numbers import not_negative, positive_real
 
 
 def is_zero(value: RealLike) -> bool:
-    return is_not_negative(value) and not is_positive_real(value)
+    return not_negative(value) and not positive_real(value)
 
 
 @given(
@@ -17,9 +17,7 @@ def is_zero(value: RealLike) -> bool:
     )
 )
 def test_positive_numbers(value: RealLike) -> None:
-    assert (
-        is_not_negative(value) and is_positive_real(value) if value else is_zero(value)
-    )
+    assert not_negative(value) and positive_real(value) if value else is_zero(value)
 
 
 @given(
@@ -32,7 +30,5 @@ def test_positive_numbers(value: RealLike) -> None:
 )
 def test_negative_floats(value: RealLike):
     assert (
-        not (is_not_negative(value) or is_positive_real(value))
-        if value
-        else is_zero(value)
+        not (not_negative(value) or positive_real(value)) if value else is_zero(value)
     )

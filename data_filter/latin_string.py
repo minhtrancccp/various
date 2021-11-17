@@ -4,7 +4,7 @@ References:
     https://en.wikipedia.org/wiki/Basic_Latin_(Unicode_block)
 
 Notes:
-    - A valid Latin string can only contain letters in the Basic Latin block and non-letter characters
+    - A valid Latin string must contain and only contain letters in the Basic Latin block and non-letter characters
 """
 import re
 from typing import Annotated
