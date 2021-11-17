@@ -35,6 +35,7 @@ pre-commit = { allow-prereleases = true, version = "^2.15.0" }
 pytest = { allow-prereleases = true, version = "^6.2.4" }
 pytest-randomly = { allow-prereleases = true, version = "^3.10.1" }
 radon = { allow-prereleases = true, version = "^5.1.0" }
+coveralls = {version = "^3.3.1", allow-prereleases = true}
 
 [tool.commitizen]
 version = "0.3.0"
