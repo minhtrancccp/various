@@ -6,7 +6,10 @@ from collections.abc import Callable
 from itertools import compress
 from typing import Union
 
-from miscellaneous_python.fibonacci_sequence import length_generator, max_generator
+from miscellaneous_python.under_construction.fibonacci_sequence import (
+    length_generator,
+    max_generator,
+)
 
 
 # TODO: Consider the need for the wrapper

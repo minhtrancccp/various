@@ -3,13 +3,10 @@ References:
     https://docs.sympy.org/latest/modules/functions/combinatorial.html?highlight=fibonacci#fibonacci
 """
 from collections.abc import Iterator
-from functools import cache
 from itertools import count, islice, takewhile
 from typing import Type
 
 from beartype import beartype
-from codetiming import Timer
-from prettytable import PrettyTable
 from sympy import fibonacci
 
 iterator_type: Type[Iterator] = Iterator[int]
@@ -112,46 +109,3 @@ def max_generator(
     yield from takewhile(
         max_value.__ge__, infinite_generator(start_from_one, imported_generator_used)
     )
-
-
-@cache
-@beartype
-def recursive_function(index: int) -> int:
-    """
-    Given an integer index, return the Fibonacci value using recursive method
-
-    Parameters
-    ----------
-    index : int
-        Index of the Fibonacci number to be found, using zero-based numbering
-        (0th Fibonacci number is 0, 1st is 1, 2nd is 1, 3rd is 2, etc.)
-
-    Returns
-    -------
-    int
-        Fibonacci value at the given index
-
-    """
-    if index <= -1:
-        return recursive_function(-index) * (-1) ** (index + 1)
-
-    elif index <= 1:
-        return index
-
-    else:
-        return recursive_function(index - 1) + recursive_function(index - 2)
-
-
-def _row_factory(value: int) -> tuple[int, int]:
-    return value, recursive_function(value)
-
-
-def main():
-    fibonacci_table: PrettyTable = PrettyTable(["Index", "Value"])
-    with Timer():
-        fibonacci_table.add_rows(reversed([*map(_row_factory, range(100, -1, -1))]))
-    print(fibonacci_table)
-
-
-if __name__ == "__main__":
-    main()
