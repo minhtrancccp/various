@@ -30,7 +30,7 @@ def test_positive_numbers(value: RealLike) -> None:
         strategies.integers(max_value=0),
     )
 )
-def test_negative_floats(value: RealLike) :
+def test_negative_floats(value: RealLike):
     assert (
         not (is_not_negative(value) or is_positive_real(value))
         if value

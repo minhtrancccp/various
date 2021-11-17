@@ -2,7 +2,7 @@ from random import Random
 
 from hypothesis import given, strategies
 
-from tests import shared_strategies
+from tests import config
 from type_hints.latin_string import letter_filter, string_validator
 
 # Avg number of letters in an English word * upper avg word count in an English sentence
@@ -11,20 +11,18 @@ max_letter_count: int = 5 * 20
 
 @strategies.composite
 def string_generator(
-    draw: shared_strategies.Draw,
+    draw: config.Draw,
     latin_only: bool = True,
     latin_count_min: int = 0,
 ) -> str:
     latin_letter_string: str = draw(
         strategies.text(
-            shared_strategies.latin_letter_strategy,
+            config.latin_letter_strategy,
             min_size=latin_count_min,
             max_size=max_letter_count,
         )
     )
-    non_letter_string: str = draw(
-        strategies.text(shared_strategies.non_letter_strategy)
-    )
+    non_letter_string: str = draw(strategies.text(config.non_letter_strategy))
 
     result: str = latin_letter_string + non_letter_string
 
@@ -32,8 +30,8 @@ def string_generator(
         non_latin_string: str = draw(
             strategies.text(
                 strategies.characters(
-                    whitelist_categories=shared_strategies.LETTER_CATEGORY,
-                    min_codepoint=shared_strategies.LOWER_Z_CODEPOINT + 1,
+                    whitelist_categories=config.LETTER_CATEGORY,
+                    min_codepoint=config.LOWER_Z_CODEPOINT + 1,
                 ),
                 min_size=1,
             )
@@ -45,17 +43,17 @@ def string_generator(
 
 
 @given(string_generator(latin_count_min=1))
-def test_valid_string(string: str) :
+def test_valid_string(string: str):
     assert string_validator(string)
 
 
 @given(string_generator(latin_only=False))
-def test_invalid_string(string: str) :
+def test_invalid_string(string: str):
     assert not string_validator(string)
 
 
 @given(strategies.data())
-def test_latin_filter(data_strategy: strategies.DataObject) :
+def test_latin_filter(data_strategy: strategies.DataObject):
     latin_count: int = data_strategy.draw(
         strategies.integers(min_value=1, max_value=max_letter_count)
     )

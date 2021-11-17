@@ -6,7 +6,7 @@ from hypothesis.strategies import booleans, composite, integers, randoms, text
 from pytest import mark
 
 from miscellaneous_python.anagrams import anagram_checker
-from tests.shared_strategies import Draw, latin_letter_strategy, non_letter_strategy
+from tests.config import Draw, latin_letter_strategy, non_letter_strategy
 
 Strings: type[Collection] = Collection[str]
 
@@ -21,8 +21,7 @@ def strings_generator(draw: Draw) -> Strings:
         return letter.swapcase() if draw(booleans()) else letter
 
     most_anagrams_possible: int = 11
-    word_count: int
-    for word_count in range(draw(integers(2, most_anagrams_possible))):
+    for _ in range(draw(integers(2, most_anagrams_possible))):
         group: list[str] = [
             *map(swap_case, base_phrase),
             *draw(text(non_letter_strategy)),

@@ -4,9 +4,12 @@ from hypothesis.strategies import SearchStrategy, floats
 from miscellaneous_python.climbing_snail import Snail
 from type_hints.real_numbers import PositiveReal, is_positive_real
 
+# The duration between Earth's formation and its destruction is about 12.13 billion years or 4.43e12 days
+# So arguments for the Snail class should have at most 12 significant digits to be considered valid
 positive_real_strategies: SearchStrategy[float] = floats(
-    min_value=0,
-    exclude_min=True,
+    min_value=1e-12,
+    max_value=1e13,
+    exclude_max=True,
     allow_nan=False,
     allow_infinity=False,
 )
@@ -22,9 +25,7 @@ positive_real_strategies: SearchStrategy[float] = floats(
 @example(69, 3, 8)
 @example(81, 14, 14)
 @given(positive_real_strategies, positive_real_strategies, positive_real_strategies)
-def test_timer(
-    forward: PositiveReal, backward: PositiveReal, distance: PositiveReal
-) -> None:
+def test_timer(forward: PositiveReal, backward: PositiveReal, distance: PositiveReal):
     snail: Snail = Snail(forward, backward)
 
     result: PositiveReal = snail.timer(distance)
