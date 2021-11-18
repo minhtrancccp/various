@@ -2,9 +2,6 @@
 References:
     https://en.wikipedia.org/wiki/ISO_basic_Latin_alphabet
     https://en.wikipedia.org/wiki/Basic_Latin_(Unicode_block)
-
-Notes:
-    - A valid Latin string must contain and only contain letters in the Basic Latin block and non-letter characters
 """
 import re
 from typing import Annotated
@@ -19,6 +16,29 @@ STRING_PATTERN: regex.Pattern[str] = regex.compile(r"[\p{ASCII}||\P{Letter}]+")
 
 @beartype
 def string_validator(string: str) -> bool:
+    """
+    Return a boolean indicating if the given string is a valid Latin string
+
+    A valid Latin string must contain and only contain letters in the Basic Latin block and non-letter characters
+
+    Examples
+    --------
+    >>> string_validator("abc")
+    True
+
+    >>> string_validator("abc123")
+    True
+
+    >>> string_validator("abc123!")
+    True
+
+    >>> string_validator("")
+    False
+
+    >>> string_validator("ăn uống")
+    False
+    """
+
     return bool(LETTER_PATTERN.search(string) and STRING_PATTERN.fullmatch(string))
 
 
