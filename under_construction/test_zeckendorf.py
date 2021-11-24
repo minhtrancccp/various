@@ -3,7 +3,7 @@ TODO:
     - Use hypothesis to conduct property-based tests
 """
 
-from miscellaneous_python.zeckendorf import (
+from under_construction.zeckendorf import (
     decimal_to_zeckendorf,
     fibonacci_to_decimal,
     fibonacci_to_zeckendorf,

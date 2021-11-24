@@ -31,7 +31,7 @@ def pi_estimation(points_count: int) -> float:
     return 4 * points_in_circle_count / points_count
 
 
-def _factory(magnitude: int) -> tuple[int, int, float, float]:
+def factory(magnitude: int) -> tuple[int, int, float, float]:
     number_of_points: int = 10 ** magnitude
     result: float = pi_estimation(number_of_points)
     return magnitude, number_of_points, result, abs(result / pi - 1) * 100
@@ -49,7 +49,7 @@ def main():
     )
 
     with Timer(text="Tabulation time: {:0.4f} seconds"), Pool() as pool:
-        new_table.add_rows(pool.map(_factory, range(1, 9)))
+        new_table.add_rows(pool.map(factory, range(1, 9)))
 
     print(new_table)
 

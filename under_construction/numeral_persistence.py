@@ -24,6 +24,7 @@ def _prod_test(digits: list[int]) -> Optional[int]:
 @cache
 @beartype
 def persistence(number: int, key: Callable[[list[int]], int] = prod) -> int:
+    # noinspection GrazieInspection
     """
     Count how many times the "key" operation has to be repeated for the number to reach its digital root
 
