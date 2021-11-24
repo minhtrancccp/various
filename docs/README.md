@@ -1,11 +1,11 @@
 # miscellaneous-python
 
+[![GitHub](https://img.shields.io/badge/github-%23121011.svg?logo=github&logoColor=white)](https://github.com/minhtrancccp/miscellaneous-python)
 [![BCH compliance](https://bettercodehub.com/edge/badge/minhtrancccp/miscellaneous-python?branch=master)](https://bettercodehub.com/)
 
 [![Bear-ified](https://raw.githubusercontent.com/beartype/beartype-assets/main/badge/bear-ified.svg)](https://beartype.rtfd.io)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
-[![Made with Jupyter](https://img.shields.io/badge/Made%20with-Jupyter-orange?logo=Jupyter)](https://jupyter.org/try)
 [![Made with Python](https://img.shields.io/badge/Made%20with-Python-1f425f?logo=Python)](https://www.python.org/)
 [![Pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 
@@ -23,7 +23,7 @@ poetry install
 
 ## Running Tests
 
-Run the following command either in the root directory or the `tests/` directory
+Run the following command in the `tests/` directory
 
 ```sh
 poetry run pytest
@@ -37,6 +37,8 @@ Read the docstring within the scripts or have a look at
 this [Read the Doc site](https://miscellaneous-python.readthedocs.io/)
 
 ## Contributing
+
+[![Git](https://img.shields.io/badge/git-%23F05033.svg?logo=git&logoColor=white)](https://github.com/minhtrancccp/miscellaneous-python.git)
 
 ![GitHub contributors](https://img.shields.io/github/contributors/minhtrancccp/miscellaneous-python?logo=github)
 ![Maintenance](https://img.shields.io/maintenance/yes/2021)
