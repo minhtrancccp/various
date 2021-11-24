@@ -5,22 +5,22 @@ repos:
       - id: black
         name: black
         description: "Black: The uncompromising Python code formatter (with Jupyter Notebook support)"
-        entry: black
+        entry: poetry run black
         language: system
-        types_or: [ jupyter, python ]
+        types_or: [jupyter, python]
 
       - id: isort-python
         name: isort
-        entry: isort
+        entry: poetry run isort
         language: system
-        types: [ python ]
+        types: [python]
 
       - id: nbqa-isort
         name: nbqa-isort
         description: "Run 'isort' on a Jupyter Notebook"
-        entry: nbqa isort
+        entry: poetry run nbqa isort
         language: system
-        types: [ jupyter ]
+        types: [jupyter]
 
       - id: commitizen
         name: commitizen check
@@ -28,5 +28,4 @@ repos:
         entry: cz check
         language: system
         files: ""
-        stages: [ commit-msg ]
-
+        stages: [commit-msg]
