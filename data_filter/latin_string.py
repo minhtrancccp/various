@@ -3,6 +3,7 @@ References:
     https://en.wikipedia.org/wiki/ISO_basic_Latin_alphabet
     https://en.wikipedia.org/wiki/Basic_Latin_(Unicode_block)
 """
+
 import re
 from typing import Annotated
 
