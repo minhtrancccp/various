@@ -14,11 +14,6 @@ A repo where I experiment and share my coding ideas, feel free to contribute to 
 
 ## Installation
 
-<!-- 
-Temporary hide the badge as the repo on Replit is being set up.
-
-[![Run on Repl.it](https://repl.it/badge/github/minhtrancccp/miscellaneous-python)](https://repl.it/github/minhtrancccp/miscellaneous-python)
--->
 [![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/minhtrancccp/miscellaneous-python)
 [![Git](https://img.shields.io/badge/git-%23F05033.svg?logo=git&logoColor=white)](https://github.com/minhtrancccp/miscellaneous-python.git)
 
@@ -56,8 +51,6 @@ Send your ideas to the Issues or Discussions section, or even make a new PR.
 
 ## Todo
 
-- [ ] Set up the repo on Repl.it or an equivalent online IDE
-
 ## Author
 
 👤 **Minh Tran**
@@ -69,5 +62,3 @@ Send your ideas to the Issues or Discussions section, or even make a new PR.
 [![GitHub license](https://img.shields.io/github/license/minhtrancccp/miscellaneous-python)](https://github.com/minhtrancccp/miscellaneous-python/blob/master/COPYING)
 
 Copyright © 2021 [Minh Tran](https://github.com/minhtrancccp).
-
-This project is [GNU GPLv3](https://github.com/minhtrancccp/miscellaneous-python/blob/master/COPYING) licensed.
