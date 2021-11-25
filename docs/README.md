@@ -56,7 +56,7 @@ Send your ideas to the Issues or Discussions section, or even make a new PR.
 
 ## Todo
 
-- [ ] Set up the repo on Repl.it
+- [ ] Set up the repo on Repl.it or an equivalent online IDE
 
 ## Author
 
