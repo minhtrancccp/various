@@ -51,6 +51,8 @@ Send your ideas to the Issues or Discussions section, or even make a new PR.
 
 ## Todo
 
+- [ ] Implement GitHub Actions in production
+
 ## Author
 
 👤 **Minh Tran**
