@@ -1,6 +1,9 @@
 """
 References:
     https://docs.sympy.org/latest/modules/functions/combinatorial.html?highlight=fibonacci#fibonacci
+
+TODO:
+    - Rewrite the script to be a class like sympy.Sieve
 """
 from collections.abc import Iterator
 from itertools import count, islice, takewhile

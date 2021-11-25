@@ -2,6 +2,9 @@
 References:
     https://en.wikipedia.org/wiki/ISO_basic_Latin_alphabet
     https://en.wikipedia.org/wiki/Basic_Latin_(Unicode_block)
+
+TODO:
+    - Provide docstring for functions `letter_filter`
 """
 
 import re
