@@ -10,20 +10,26 @@
 [![Made with Python](https://img.shields.io/badge/Made%20with-Python-1f425f?logo=Python)](https://www.python.org/)
 [![Pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit)](https://github.com/pre-commit/pre-commit)
 
-A repo where I experiment and share my coding ideas, feel free to contribute to it.
+A repo where I present some of my personal Python projects.
+
+## Requirements
+
+Python 3.10 is needed (find it at [Python.org](https://www.python.org/downloads/) or use [pyenv](https://github.com/pyenv/pyenv#installation)).
+
+Also recommended having is [poetry](https://github.com/python-poetry/poetry#installation).
 
 ## Installation
 
 [![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/minhtrancccp/miscellaneous-python)
 [![Git](https://img.shields.io/badge/git-%23F05033.svg?logo=git&logoColor=white)](https://github.com/minhtrancccp/miscellaneous-python.git)
 
-Install [poetry](https://github.com/python-poetry/poetry#installation) then type this command in the root directory
+If you have [poetry](https://github.com/python-poetry/poetry#installation) then run this command in the root directory
 
 ```sh
 poetry install
 ```
 
-## Running Tests
+## Testing
 
 Run the following command in the `tests/` directory
 
