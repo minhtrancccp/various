@@ -1,30 +1,25 @@
 [tool.poetry]
 name = "miscellaneous-python"
 version = "0.3.0"
-description = "A repo where I experiment and share my coding ideas, feel free to contribute to it"
+description = "Compilation of my Python modules"
 license = "GPL-3.0-or-later"
 authors = ["minhtrancccp <33189614+minhtrancccp@users.noreply.github.com>"]
 readme = "./docs/README.md"
 
 [tool.poetry.dependencies]
-python = ">=3.9,<3.11"
+python = ">=3.10,<4.0"
 
-gmpy2 = [
-    { python = "==3.9.*", url = "https://github.com/aleaxit/gmpy/releases/download/gmpy2-2.1.0rc1/gmpy2-2.1.0rc1-cp39-cp39-win_amd64.whl" },
-    { python = "==3.10.*", url = "https://github.com/aleaxit/gmpy/releases/download/gmpy2-2.1.0rc1/gmpy2-2.1.0rc1-cp310-cp310-win_amd64.whl" },
-]
+gmpy2 = { url = "https://github.com/aleaxit/gmpy/releases/download/gmpy2-2.1.0rc1/gmpy2-2.1.0rc1-cp310-cp310-win_amd64.whl" }
 
 beartype = { allow-prereleases = true, version = "^0.9.0" }
-codetiming = { allow-prereleases = true, version = "^1.3.0" }
 more-itertools = { allow-prereleases = true, version = "^8.8.0" }
 numerary = { allow-prereleases = true, version = "^0.1.1" }
-prettytable = { allow-prereleases = true, version = "^2.1.0" }
 regex = { allow-prereleases = true, version = "^2021.9.24" }
-returns = { allow-prereleases = true, version = "^0.17.0" }
 sympy = { allow-prereleases = true, version = "^1.8" }
 
 [tool.poetry.dev-dependencies]
 black = { allow-prereleases = true, extras = ["jupyter"], version = "^21.8b0" }
+codetiming = { allow-prereleases = true, version = "^1.3.0" }
 commitizen = { allow-prereleases = true, version = "^2.18.1" }
 coverage = { allow-prereleases = true, extras = ["toml"], version = "^6.0.2" }
 hypothesis = { allow-prereleases = true, extras = ["cli", "codemods"], version = "^6.21.6" }
@@ -32,10 +27,10 @@ isort = { allow-prereleases = true, version = "^5.9.3" }
 jupyter = { allow-prereleases = true, version = "^1.0.0" }
 nbqa = { allow-prereleases = true, version = "^1.1.0" }
 pre-commit = { allow-prereleases = true, version = "^2.15.0" }
+prettytable = { allow-prereleases = true, version = "^2.1.0" }
 pytest = { allow-prereleases = true, version = "^6.2.4" }
 pytest-randomly = { allow-prereleases = true, version = "^3.10.1" }
 radon = { allow-prereleases = true, version = "^5.1.0" }
-coveralls = {version = "^3.3.1", allow-prereleases = true}
 
 [tool.commitizen]
 version = "0.3.0"
