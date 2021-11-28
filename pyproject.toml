@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "miscellaneous-python"
-version = "0.3.0"
+version = "1.0.0"
 description = "Compilation of my Python modules"
 license = "GPL-3.0-or-later"
 authors = ["minhtrancccp <33189614+minhtrancccp@users.noreply.github.com>"]
@@ -33,7 +33,7 @@ pytest-randomly = { allow-prereleases = true, version = "^3.10.1" }
 radon = { allow-prereleases = true, version = "^5.1.0" }
 
 [tool.commitizen]
-version = "0.3.0"
+version = "1.0.0"
 version_files = ["pyproject.toml"]
 
 [tool.coverage.run]
