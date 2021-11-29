@@ -2,7 +2,7 @@ from random import Random
 
 from hypothesis import given, strategies
 
-from data_filter.latin_string import letter_filter, string_validator
+from data_filter import latin_string
 from tests import config
 
 # Avg number of letters in an English word * upper avg word count in an English sentence
@@ -44,12 +44,12 @@ def string_generator(
 
 @given(string_generator(latin_count_min=1))
 def test_valid_string(string: str):
-    assert string_validator(string)
+    assert latin_string.string_validator(string)
 
 
 @given(string_generator(latin_only=False))
 def test_invalid_string(string: str):
-    assert not string_validator(string)
+    assert not latin_string.string_validator(string)
 
 
 @given(strategies.data())
@@ -61,4 +61,8 @@ def test_latin_filter(data_strategy: strategies.DataObject):
         string_generator(latin_count_min=latin_count)
     )
 
-    assert len(letter_filter(drawn_string)) >= latin_count
+    drawn_case_mode: latin_string.CaseConversionModes = data_strategy.draw(
+        strategies.sampled_from(latin_string.CaseConversionModes)
+    )
+
+    assert len(latin_string.letter_filter(drawn_string, drawn_case_mode)) >= latin_count

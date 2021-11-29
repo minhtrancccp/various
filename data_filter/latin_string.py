@@ -2,12 +2,10 @@
 References:
     https://en.wikipedia.org/wiki/ISO_basic_Latin_alphabet
     https://en.wikipedia.org/wiki/Basic_Latin_(Unicode_block)
-
-TODO:
-    - Provide docstring for functions `letter_filter`
 """
 
 import re
+from enum import Enum, auto
 from typing import Annotated
 
 import regex
@@ -49,9 +47,51 @@ def string_validator(string: str) -> bool:
 LatinString: type[str] = Annotated[str, Is[string_validator]]
 
 
+class CaseConversionModes(Enum):
+    """
+    Enum class providing case conversion modes for the `case_conversion` param in the `letter_filter` function
+
+    3 options are available:
+        - `CaseConversionModes.UNCHANGED`: no case conversion (default)
+        - `CaseConversionModes.LOWERCASE`: convert to lowercase
+        - `CaseConversionModes.UPPERCASE`: convert to uppercase
+    """
+
+    UNCHANGED = auto()
+    LOWERCASE = auto()
+    UPPERCASE = auto()
+
+
 @beartype
-def letter_filter(string: LatinString, lowercase: bool = True) -> list[str]:
-    if lowercase:
-        string = string.lower()
+def letter_filter(
+    string: LatinString,
+    case_conversion: CaseConversionModes = CaseConversionModes.UNCHANGED,
+) -> list[str]:
+    """
+    Return a list of Latin letters in the given string
+
+    To get the matching letters in a different case than default (i.e. unchanged), use the `case_conversion` parameter.
+
+    Examples
+    --------
+    >>> letter_filter("abc")
+    ['a', 'b', 'c']
+
+    >>> letter_filter("abc", case_conversion=CaseConversionModes.LOWERCASE)
+    ['a', 'b', 'c']
+
+    >>> letter_filter("abc", case_conversion=CaseConversionModes.UPPERCASE)
+    ['A', 'B', 'C']
+
+    >>> letter_filter("39hgehh349IGEH98t583")
+    ['h', 'g', 'e', 'h', 'h', 'I', 'G', 'E', 'H', 't']
+    """
+
+    match case_conversion:
+        case CaseConversionModes.LOWERCASE:
+            string = string.lower()
+
+        case CaseConversionModes.UPPERCASE:
+            string = string.upper()
 
     return LETTER_PATTERN.findall(string)

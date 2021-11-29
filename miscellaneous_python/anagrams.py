@@ -11,7 +11,7 @@ from beartype import beartype
 from beartype.vale import Is
 from sympy import sieve
 
-from data_filter.latin_string import LatinString, letter_filter
+from data_filter.latin_string import CaseConversionModes, LatinString, letter_filter
 from data_filter.real_numbers import PositiveInteger
 
 
@@ -46,7 +46,9 @@ def string_to_product(string: LatinString) -> PositiveInteger:
     from math import prod
 
     letter_to_prime: dict[str, PositiveInteger] = dict(zip(ascii_lowercase, sieve))
-    return prod(map(letter_to_prime.get, letter_filter(string)))
+    return prod(
+        map(letter_to_prime.get, letter_filter(string, CaseConversionModes.LOWERCASE))
+    )
 
 
 @beartype
