@@ -57,7 +57,9 @@ Send your ideas to the Issues or Discussions section, or even make a new PR.
 
 ## Todo
 
-- [ ] Implement GitHub Actions in production
+- [ ] Add a README file for subpackages
+- [ ] Add a CONTRIBUTING file
+- [ ] Implement GitHub Actions in production (e.g. Dependabot)
 
 ## Author
 
