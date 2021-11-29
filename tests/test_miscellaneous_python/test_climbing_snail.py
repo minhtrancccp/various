@@ -5,7 +5,7 @@ from data_filter.real_numbers import PositiveReal, positive_real
 from miscellaneous_python.climbing_snail import Snail
 
 # The duration between Earth's formation and its destruction is about 12.13 billion years or 4.43e12 days
-# So arguments for the Snail class should have at most 12 significant digits to be considered valid
+# So arguments for the Snail class should have at most 13 significant digits to be considered valid
 positive_real_strategies: SearchStrategy[float] = floats(
     min_value=1e-12,
     max_value=1e13,
