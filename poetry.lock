@@ -307,7 +307,7 @@ type = "url"
 url = "https://github.com/aleaxit/gmpy/releases/download/gmpy2-2.1.0rc1/gmpy2-2.1.0rc1-cp310-cp310-win_amd64.whl"
 [[package]]
 name = "hypothesis"
-version = "6.28.1"
+version = "6.29.0"
 description = "A library for property-based testing"
 category = "dev"
 optional = false
@@ -1346,7 +1346,7 @@ notebook = ">=4.4.1"
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.10,<4.0"
-content-hash = "5b7585426a3230f14756882d7f0d930758a858653ad34f6b2fca4d62efb1b83c"
+content-hash = "d695ad43baf83a9a20ac55b00b5b569ed42b7bb29eff056092e70c986ef1ddb2"
 
 [metadata.files]
 appnope = [
@@ -1575,8 +1575,8 @@ future = [
 ]
 gmpy2 = []
 hypothesis = [
-    {file = "hypothesis-6.28.1-py3-none-any.whl", hash = "sha256:3846ce6687d6b3f07ef9719433f7738fe1ea58b509170cdddfdd3beedf75ad1f"},
-    {file = "hypothesis-6.28.1.tar.gz", hash = "sha256:ecc82d2eb6eee3072ebf16661e8dd009567c727a70e0f6a3bc586b0129f903d1"},
+    {file = "hypothesis-6.29.0-py3-none-any.whl", hash = "sha256:6f82f795fddbc428b8085cc4027bc36d1454ffd0a7db1e2d4ae4f927c40260ce"},
+    {file = "hypothesis-6.29.0.tar.gz", hash = "sha256:13f61e0775ba89483afbc6d6241e8edf2491f8569f8dd382a361288ec42e49dd"},
 ]
 identify = [
     {file = "identify-2.4.0-py2.py3-none-any.whl", hash = "sha256:eba31ca80258de6bb51453084bff4a923187cd2193b9c13710f2516ab30732cc"},
