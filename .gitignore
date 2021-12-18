@@ -13,3 +13,7 @@ __*/
 # .py & .ipynb files in the root directory
 /*.py
 /*.ipynb
+
+# pytest html reports
+**/assets
+**/report.html
