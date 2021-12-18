@@ -3,10 +3,10 @@ from hypothesis.strategies import integers
 from numerary.types import IntegralLikeSCU
 from sympy import fibonacci
 
-# To avoid 'RecursionError: maximum recursion depth exceeded', a max absolute limit is set for testing
 from data_filter.real_numbers import PositiveInteger
 from miscellaneous_python.recursive_fibonacci import recursive_function
 
+# To avoid 'RecursionError: maximum recursion depth exceeded', a max absolute limit is set for testing
 max_abs_limit: PositiveInteger = 330
 
 
