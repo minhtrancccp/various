@@ -3,7 +3,7 @@ from hypothesis.strategies import DataObject, data, integers, sampled_from
 
 from data_filter import latin_string
 from data_filter.real_numbers import PositiveInteger
-from tests.test_data_filter.config import MAX_LETTER_COUNT, string_strategy
+from tests.data_filter.config import MAX_LETTER_COUNT, string_strategy
 
 
 @given(string_strategy(1))

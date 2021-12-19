@@ -8,20 +8,20 @@ from pytest import mark
 from data_filter.latin_string import LatinString
 from data_filter.real_numbers import PositiveInteger
 from miscellaneous_python.anagrams import anagram_checker
-from tests.test_miscellaneous_python import config
+from tests.miscellaneous_python import config
 
 Strings: type[Collection] = Collection[LatinString]
 
 
 @composite
 def strings_generator(draw: config.Draw) -> Strings:
-    least_letters_used: int = 2
-    base_phrase: LatinString = draw(config.string_strategy(least_letters_used, False))
-    randomizer: Random = draw(randoms())
-    result: list[LatinString] = []
-
     def swap_case(letter: LatinString) -> LatinString:
         return letter.swapcase() if draw(booleans()) else letter
+
+    base_phrase: LatinString = draw(config.latin_letter_strategy)
+
+    randomizer: Random = draw(randoms())
+    result: list[LatinString] = []
 
     most_anagrams_possible: PositiveInteger = 11
     for _ in range(draw(integers(2, most_anagrams_possible))):
@@ -29,8 +29,8 @@ def strings_generator(draw: config.Draw) -> Strings:
             *map(swap_case, base_phrase),
             *draw(config.non_letter_strategy),
         ]
-        randomizer.shuffle(group)
 
+        randomizer.shuffle(group)
         result.append("".join(group))
 
     return result

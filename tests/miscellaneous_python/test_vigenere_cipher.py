@@ -7,9 +7,9 @@ from hypothesis.strategies import SearchStrategy
 
 from data_filter.latin_string import LatinString
 from miscellaneous_python.vigenere_cipher import VigenereCipher
-from tests.test_miscellaneous_python.config import string_strategy
+from tests.miscellaneous_python.config import string_strategy
 
-testing_string: SearchStrategy[str] = string_strategy(1)
+testing_string: SearchStrategy[str] = string_strategy()
 
 
 @given(testing_string, testing_string)
