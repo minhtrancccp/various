@@ -1,6 +1,6 @@
 """
 References:
-    https://en.wikipedia.org/wiki/Roman_numerals#Standard_form
+    https://mathworld.wolfram.com/RomanNumerals.html
 """
 
 from roman_numeral.decoder_module import decoder
