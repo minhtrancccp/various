@@ -4,12 +4,10 @@ References:
 """
 
 from collections.abc import Collection
-from string import ascii_lowercase
 from typing import Annotated
 
 from beartype import beartype
 from beartype.vale import Is
-from sympy import sieve
 
 from data_filter.latin_string import CaseConversionModes, LatinString, letter_filter
 from data_filter.real_numbers import PositiveInteger
@@ -44,6 +42,9 @@ def string_to_product(string: LatinString) -> PositiveInteger:
     """
 
     from math import prod
+    from string import ascii_lowercase
+
+    from sympy import sieve
 
     letter_to_prime: dict[str, PositiveInteger] = dict(zip(ascii_lowercase, sieve))
     return prod(
