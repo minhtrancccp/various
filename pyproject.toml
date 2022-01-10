@@ -12,7 +12,7 @@ python = ">=3.10,<4.0"
 beartype = { allow-prereleases = true, version = "^0.9.0" }
 gmpy2 = { allow-prereleases = true, version = "^2.1.1" }
 more-itertools = { allow-prereleases = true, version = "^8.8.0" }
-numerary = { allow-prereleases = true, version = "^0.1.1" }
+numerary = { allow-prereleases = true, version = "^0.2.1" }
 regex = { allow-prereleases = true, version = "^2021.9.24" }
 sympy = { allow-prereleases = true, version = "^1.8" }
 
