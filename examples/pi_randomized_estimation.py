@@ -1,13 +1,12 @@
 """
 References:
     https://youtu.be/pvimAM_SLic
-"""
-from math import hypot, pi
-from multiprocessing import Pool
-from random import random
 
-from codetiming import Timer
-from prettytable import PrettyTable
+TODO:
+    Update docstrings.
+"""
+
+from math import hypot, pi
 
 
 def pi_estimation(points_count: int) -> float:
@@ -25,6 +24,8 @@ def pi_estimation(points_count: int) -> float:
         Estimated value of Pi
 
     """
+    from random import random
+
     points_in_circle_count: int = sum(
         hypot(random(), random()) <= 1 for _ in range(points_count)
     )
@@ -38,6 +39,11 @@ def factory(magnitude: int) -> tuple[int, int, float, float]:
 
 
 def main():
+    from multiprocessing import Pool
+
+    from codetiming import Timer
+    from prettytable import PrettyTable
+
     print(f"{pi = }")
     new_table: PrettyTable = PrettyTable(
         (
