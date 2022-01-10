@@ -5,7 +5,6 @@ References:
 
 from enum import IntEnum
 from itertools import cycle
-from string import ascii_lowercase
 from typing import Optional
 
 from beartype import beartype
@@ -49,6 +48,8 @@ class VigenereCipher:
 
     @beartype
     def _char_converter(self, input_char: str) -> str:
+        from string import ascii_lowercase
+
         result_char: latin_string.LatinString = input_char
         if latin_string.LETTER_PATTERN.search(result_char):
             message_letter_index: int = ascii_lowercase.find(result_char.lower())

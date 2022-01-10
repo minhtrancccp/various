@@ -1,7 +1,3 @@
-"""
-TODO: Write tests for switch_mode()
-"""
-
 from hypothesis import given
 from hypothesis.strategies import SearchStrategy
 
