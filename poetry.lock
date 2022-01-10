@@ -798,14 +798,14 @@ test = ["pytest", "coverage", "requests", "nbval", "selenium", "pytest-cov", "re
 
 [[package]]
 name = "numerary"
-version = "0.2.1"
+version = "0.3.0"
 description = "Python hacks for type-checking numbers"
 category = "main"
 optional = false
 python-versions = ">=3.7"
 
 [package.extras]
-dev = ["beartype (>=0.8,!=0.9.0)", "numpy", "pre-commit", "sympy (>=1.9)", "tox"]
+dev = ["beartype (>=0.8,!=0.9.0)", "numpy", "pre-commit", "setuptools-scm", "sympy (>=1.9)", "tox"]
 
 [[package]]
 name = "packaging"
@@ -907,11 +907,11 @@ virtualenv = ">=20.0.8"
 
 [[package]]
 name = "prettytable"
-version = "2.5.0"
+version = "3.0.0"
 description = "A simple Python library for easily displaying tabular data in a visually appealing ASCII table format"
 category = "dev"
 optional = false
-python-versions = ">=3.6"
+python-versions = ">=3.7"
 
 [package.dependencies]
 wcwidth = "*"
@@ -994,7 +994,7 @@ python-versions = ">=3.6"
 
 [[package]]
 name = "pytest"
-version = "6.2.5"
+version = "7.0.0rc1"
 description = "pytest: simple powerful testing with Python"
 category = "dev"
 optional = false
@@ -1008,10 +1008,10 @@ iniconfig = "*"
 packaging = "*"
 pluggy = ">=0.12,<2.0"
 py = ">=1.8.2"
-toml = "*"
+tomli = ">=1.0.0"
 
 [package.extras]
-testing = ["argcomplete", "hypothesis (>=3.56)", "mock", "nose", "requests", "xmlschema"]
+testing = ["argcomplete", "hypothesis (>=3.56)", "mock", "nose", "pygments (>=2.7.2)", "requests", "xmlschema"]
 
 [[package]]
 name = "pytest-html"
@@ -1375,7 +1375,7 @@ notebook = ">=4.4.1"
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.10,<4.0"
-content-hash = "5b5c361f23c4286b46925dc0bf5e76413a00ec16426b1fcb6a0275f926fc5282"
+content-hash = "84ed347502b476602fb3ec1f644001e520a3e87e1abc259c17b2ba5ab6dc734e"
 
 [metadata.files]
 appnope = [
@@ -1847,7 +1847,7 @@ notebook = [
     {file = "notebook-6.4.6.tar.gz", hash = "sha256:7bcdf79bd1cda534735bd9830d2cbedab4ee34d8fe1df6e7b946b3aab0902ba3"},
 ]
 numerary = [
-    {file = "numerary-0.2.1-py3-none-any.whl", hash = "sha256:6c1edf25cf9bdae87aed45a82b8e5d14d7607ac62122459ece6feeb4cea2c4f2"},
+    {file = "numerary-0.3.0-py3-none-any.whl", hash = "sha256:0516174ff377bc7114ad383e1355a178410b4f8422ae55dc1d95c5ef23b6a03b"},
 ]
 packaging = [
     {file = "packaging-21.3-py3-none-any.whl", hash = "sha256:ef103e05f519cdc783ae24ea4e2e0f508a9c99b2d4969652eed6a2e1ea5bd522"},
@@ -1886,8 +1886,8 @@ pre-commit = [
     {file = "pre_commit-2.16.0.tar.gz", hash = "sha256:fe9897cac830aa7164dbd02a4e7b90cae49630451ce88464bca73db486ba9f65"},
 ]
 prettytable = [
-    {file = "prettytable-2.5.0-py3-none-any.whl", hash = "sha256:1411c65d21dca9eaa505ba1d041bed75a6d629ae22f5109a923f4e719cfecba4"},
-    {file = "prettytable-2.5.0.tar.gz", hash = "sha256:f7da57ba63d55116d65e5acb147bfdfa60dceccabf0d607d6817ee2888a05f2c"},
+    {file = "prettytable-3.0.0-py3-none-any.whl", hash = "sha256:d55bc2547611bd8c40f1c69bbb8daf1b6b2c326214a265d211ec9c57fc252093"},
+    {file = "prettytable-3.0.0.tar.gz", hash = "sha256:69fe75d78ac8651e16dd61265b9e19626df5d630ae294fc31687aa6037b97a58"},
 ]
 prometheus-client = [
     {file = "prometheus_client-0.12.0-py2.py3-none-any.whl", hash = "sha256:317453ebabff0a1b02df7f708efbab21e3489e7072b61cb6957230dd004a0af0"},
@@ -1941,8 +1941,8 @@ pyrsistent = [
     {file = "pyrsistent-0.18.0.tar.gz", hash = "sha256:773c781216f8c2900b42a7b638d5b517bb134ae1acbebe4d1e8f1f41ea60eb4b"},
 ]
 pytest = [
-    {file = "pytest-6.2.5-py3-none-any.whl", hash = "sha256:7310f8d27bc79ced999e760ca304d69f6ba6c6649c0b60fb0e04a4a77cacc134"},
-    {file = "pytest-6.2.5.tar.gz", hash = "sha256:131b36680866a76e6781d13f101efb86cf674ebb9762eb70d3082b6f29889e89"},
+    {file = "pytest-7.0.0rc1-py3-none-any.whl", hash = "sha256:8fc363e0b7407a9397e660ef81e1634e4504faaeb6ad1d2416da4c38d29a0f45"},
+    {file = "pytest-7.0.0rc1.tar.gz", hash = "sha256:e1af71303d633af3376130b388e028342815cff74d2f3be4aeb22f3fd94325e6"},
 ]
 pytest-html = [
     {file = "pytest-html-3.1.1.tar.gz", hash = "sha256:3ee1cf319c913d19fe53aeb0bc400e7b0bc2dbeb477553733db1dad12eb75ee3"},

@@ -12,7 +12,7 @@ python = ">=3.10,<4.0"
 beartype = { allow-prereleases = true, version = "^0.9.0" }
 gmpy2 = { allow-prereleases = true, version = "^2.1.1" }
 more-itertools = { allow-prereleases = true, version = "^8.8.0" }
-numerary = { allow-prereleases = true, version = "^0.2.1" }
+numerary = { allow-prereleases = true, version = "^0.3.0" }
 regex = { allow-prereleases = true, version = "^2021.9.24" }
 sympy = { allow-prereleases = true, version = "^1.8" }
 
@@ -26,8 +26,8 @@ isort = { allow-prereleases = true, version = "^5.9.3" }
 jupyter = { allow-prereleases = true, version = "^1.0.0" }
 nbqa = { allow-prereleases = true, version = "^1.1.0" }
 pre-commit = { allow-prereleases = true, version = "^2.15.0" }
-prettytable = { allow-prereleases = true, version = "^2.1.0" }
-pytest = { allow-prereleases = true, version = "^6.2.4" }
+prettytable = { allow-prereleases = true, version = "^3.0.0" }
+pytest = { allow-prereleases = true, version = "^7.0.0rc1" }
 pytest-html = { allow-prereleases = true, version = "^3.1.1" }
 pytest-randomly = { allow-prereleases = true, version = "^3.10.1" }
 radon = { allow-prereleases = true, version = "^5.1.0" }
