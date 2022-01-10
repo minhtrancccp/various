@@ -10,20 +10,20 @@
 [![Made with Python](https://img.shields.io/badge/Made%20with-Python-1f425f?logo=Python)](https://www.python.org/)
 [![Pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit)](https://github.com/pre-commit/pre-commit)
 
-A repo where I present some of my personal Python projects.
+A repo where I present some of my Python scripts.
 
 ## Requirements
 
-Python 3.10 is needed (find it at [Python.org](https://www.python.org/downloads/) or use [pyenv](https://github.com/pyenv/pyenv#installation)).
+Python 3.10 or newer is required (find it at [Python.org](https://www.python.org/downloads/) or use [pyenv](https://github.com/pyenv/pyenv#installation)).
 
-Also recommended having is [poetry](https://github.com/python-poetry/poetry#installation).
+[poetry](https://github.com/python-poetry/poetry#installation) is recommended to use in this project, as the following examples assume that poetry is already installed.
 
 ## Installation
 
 [![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/minhtrancccp/miscellaneous-python)
 [![Git](https://img.shields.io/badge/git-%23F05033.svg?logo=git&logoColor=white)](https://github.com/minhtrancccp/miscellaneous-python.git)
 
-If you have [poetry](https://github.com/python-poetry/poetry#installation) then run this command in the root directory
+You can also run this command in the root directory
 
 ```sh
 poetry install
@@ -39,15 +39,12 @@ poetry run pytest
 
 ## Documentation
 
-[![Documentation Status](https://readthedocs.org/projects/miscellaneous-python/badge/?version=latest)](https://miscellaneous-python.readthedocs.io/en/latest/?badge=latest)
-
-Read the docstring within the scripts or have a look at
-this [Read the Doc site](https://miscellaneous-python.readthedocs.io/)
+As [the repo's Read the Doc site](https://miscellaneous-python.readthedocs.io/) is to be updated, please kindly use the docstring within scripts instead.
 
 ## Contributing
 
 ![GitHub contributors](https://img.shields.io/github/contributors/minhtrancccp/miscellaneous-python?logo=github)
-![Maintenance](https://img.shields.io/maintenance/yes/2021)
+![Maintenance](https://img.shields.io/maintenance/yes/2022)
 [![Average time to resolve an issue](https://isitmaintained.com/badge/resolution/minhtrancccp/miscellaneous-python.svg)](http://isitmaintained.com/project/minhtrancccp/miscellaneous-python "Average time to resolve an issue")
 [![Percentage of issues still open](https://isitmaintained.com/badge/open/minhtrancccp/miscellaneous-python.svg)](http://isitmaintained.com/project/minhtrancccp/miscellaneous-python "Percentage of issues still open")
 
@@ -57,8 +54,9 @@ Send your ideas to the Issues or Discussions section, or even make a new PR.
 
 ## Todo
 
-- [ ] Add a README file for subpackages
 - [ ] Add a CONTRIBUTING file
+- [ ] Add a README file for subpackages
+- [ ] Add documentation to [the repo's Read the Doc site](https://miscellaneous-python.readthedocs.io/)
 - [ ] Implement GitHub Actions in production (e.g. Dependabot)
 
 ## Author
